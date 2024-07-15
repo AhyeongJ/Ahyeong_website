@@ -41,14 +41,14 @@ greeting = "'안녕하세요'라고 말했다" # 작은따옴표, 큰따옴표�
 
 ```{python}
 var1 = [1, 2, 3]
-var1
+print(var1)
 var2 = [4, 5, 6]
-var2 
-var1 + var2
+print(var2) 
+print(var1 + var2)
 a = '안녕하세요!'
 b = 'LS 빅데이터 스쿨!'
-a + b
-a + ' ' + b
+print(a + b)
+print(a + ' ' + b)
 # 문자는 문자끼리만 더할 수 있음. 
 ```
 
@@ -57,7 +57,7 @@ a + ' ' + b
 ```{python}
 num1 = 3
 num2 = 5
-num1 + num2 
+print(num1 + num2)
 ```
 
 #### 변수명 스타일 
@@ -102,7 +102,7 @@ print(a <= b)
 ```{python}
 num1 = ((2**4) + (12453//7)) % 8
 num2 = ((9**7) / 12) * (36452 % 253)
-num1 < num2 
+print(num1 < num2) 
 
 user_age = 22
 is_adult = user_age >= 18
@@ -144,18 +144,18 @@ print(False + False)
 
 ```{python}
 print(True * True) #1
-True * False #0
-False * False #0
+print(True * False) #0
+print(False * False) #0
 ```
 
 
 #### or 연산자 
 
 ```{python}
-True or True
-True or False
-False or True
-False or False
+print(True or True)
+print(True or False)
+print(False or True)
+print(False or False)
 ```
 
 #### or은 덧셈(+)과 같음 
@@ -163,8 +163,8 @@ False or False
 ```{python}
 a = True
 b = False
-a or b
-min(a + b , 1) #수식, 0일 때 제외하고 모든 결과 1 
+print(a or b)
+print(min(a + b , 1)) #수식, 0일 때 제외하고 모든 결과 1 
 ```
 
 #### 복합대입연산자
@@ -188,8 +188,8 @@ str1 = "Hello! "
 repeated_str1 = str1 * 3  #문자열과 숫자의 곲셈은 정수만 가능 
 print("Repeated string:", repeated_str1)
 
-str1 * (-2) #error 안 뜲 '' 
-str1 * 0  #error 안 뜲 '' 
+print(str1 * (-2)) #error 안 뜲 '' 
+print(str1 * 0)  #error 안 뜲 '' 
 ```
 - 정수: integer
 - 실수: float (double)
@@ -201,7 +201,6 @@ x = 5
 print(+x) #양수 강조
 print(-x) #부호 변환
 print(~x) #x의 비트를 반전 
-
 ```
 
 #### 비트 연산자
@@ -228,4 +227,3 @@ df
                                 
 import pandas as pd
 ```
-
