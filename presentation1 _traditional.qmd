@@ -3,7 +3,9 @@ title: "presentation1_traditional"
 editor: visual
 jupyter: python3
 ---
-#### 필요한 패키지 불러오기 
+
+#### 필요한 패키지 불러오기
+
 ```{python}
 import pandas as pd
 import numpy as np
@@ -11,13 +13,15 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 ```
 
-#### 데이터 불러오기 
+#### 데이터 불러오기
+
 ```{python}
 market = pd.read_excel("C:/Users/User/Documents/LS 빅데이터 스쿨/lsbigdata_project1/data/traditionalmarket.xlsx")
 market2 = market.copy()
 ```
 
-#### 변수명 재설정하기 
+#### 변수명 재설정하기
+
 ```{python}
 market2 = market2.rename(columns = {"시장명" : "market_name", 
                                     "시장유형" : "type",
@@ -31,16 +35,16 @@ market2 = market2.rename(columns = {"시장명" : "market_name",
                                     "데이터기준일자" : "data_date"})
 ```
 
+#### 데이터 변수별 요약통계량과 정보 확인하기
 
-#### 데이터 변수별 요약통계량과 정보 확인하기 
 ```{python}
 market2['market_count'].describe()
 market2["public_toilet"].info()
 market2["parking_lot"].info()
 ```
 
-
 #### market_scale 파생변수 생성과 막대그래프 확인
+
 ```{python}
 plt.clf()
 market2 = market2.assign(market_scale = np.where(market2["market_count"] >= 134, "large", 
@@ -50,6 +54,7 @@ plt.show()
 ```
 
 #### conv_level 파생변수 생성과 막대그래프 확인인
+
 ```{python}
 plt.clf()
 market2['conv_level'] = np.where((market2['public_toilet'] == 'Y') & (market2['parking_lot'] == 'Y'), 'high', 
@@ -58,17 +63,18 @@ sns.countplot(data = market2, x = 'conv_level', hue = 'conv_level')
 plt.show()
 ```
 
-#### 시장유형 및 점포규모의 시장개수 알아보기 
+#### 시장유형 및 점포규모의 시장개수 알아보기
+
 ```{python}
 df = market2.groupby(["type", "market_scale"], as_index = False) \
             .agg(market_count = ("market_scale", "count"))
 df.sort_values('market_count', ascending = False)
 ```
 
-#### 막대그래프로 알아보기 
+#### 막대그래프로 알아보기
+
 ```{python}
 plt.clf()
 sns.barplot(data = df, x = 'type', y = 'market_count', hue = 'market_scale')
 plt.show()
 ```
-
