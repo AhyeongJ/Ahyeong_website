@@ -12,6 +12,8 @@ website:
         text: about
       - href: hw1.qmd
         text: hw1 
+      - href: hw2.qmd
+        text: hw2
       - href: note 3.qmd
         text: note3
       - href: presentation1_traditional.qmd

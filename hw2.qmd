@@ -12,7 +12,7 @@ import numpy as np
 ```
 
 ```{python}
-mpg = pd.read_csv("C:/Users/USER/Downloads/mpg.csv")
+mpg = pd.read_csv("data/mpg.csv")
 displ1 = mpg.query('displ <= 4')
 displ2 = mpg.query('displ >= 5')
 displ1['hwy'].mean().round(2)
@@ -34,7 +34,22 @@ toyota['cty'].mean().round(2)
 car3 = mpg.query('manufacturer in ["chevrolet", "ford", "honda"]')
 car3['hwy'].mean().round(2)
 ```
+## p.150
+#### Q1. `mpg` 데이터 중 일부만 추출해 분석에 활용하자. 
+#### `mpg` 데이터에서 `category`, `cty` 변수를 추출해 새로운 데이터를 만들어라. 
+#### 새로 만든 데이터의 일부를 추출해 두 변수로만 구성되어 있는지 확인하세요. 
+```{python}
+df = mpg[['category','cty']]
+df.head()
+```
 
+#### Q2. 자동차 종류에 따라 도시 연비가 어떻게 다른지 알아보고자 한다. 
+#### 앞에서 추출한 데이터를 이용해 `category`가 `suv`인 자동차와 `compact`인 자동차 중 어떤 자동차의 `cty` 평균이 더 높은가. 
+```{python}
+df.query('category in ["suv", "compact"]') \
+  .groupby('category') \
+  .agg(cty_mean = ("cty", "mean")) 
+```
 
 
 ## p.153
@@ -81,21 +96,28 @@ mpg.assign(total = mpg["cty"] + mpg["cty"],
 #### `mpg` 데이터의 `category`는 자동차를 특징에 따라 `suv`, `compact` 등 일곱 종류로 분류한 변수
 #### 어떤 차종의 도시 연비가 높은지 비교해 보려고 한다. `category`별 `cty` 평균을 구해 보자. 
 ```{python}
-
+mpg.groupby("category", as_index = False) \
+   .agg(cty_mean = ('cty', 'mean'))
 ```
 
 #### Q2.
 #### 앞 문제의 출력 결과는 `category` 값 알파벳순으로 정렬되어 있다. 
 #### 어떤 차종의 도시 연비가 높은지 쉽게 알아볼 수 있도록 `cty` 평균이 높은 순으로 정렬해 출력하라. 
 ```{python}
-
+mpg.groupby("category", as_index = False) \
+   .agg(cty_mean = ('cty', 'mean')) \
+   .sort_values('cty_mean', ascending = False)
 ```
 
 #### Q3. 
 #### 어떤 회사 자동차의 `hwy`가 가장 높은지 알아보려고 한다. 
 #### `hwy` 평균이 가장 높은 회사 세 곳을 출력하세요. 
 ```{python}
-
+mpg.groupby('manufacturer', as_index = False) \
+   .agg(mean_hwy = ('hwy', 'mean')) \
+   .sort_values('mean_hwy', ascending = False)\
+   .round(2) \
+   .head(3)[['manufacturer']]
 ```
 
 
@@ -103,7 +125,10 @@ mpg.assign(total = mpg["cty"] + mpg["cty"],
 #### 어떤 회사에서 `compact` 차종을 가장 많이 생산하는지 알아보려고 한다. 
 #### 회사별 `compact`차종 수를 내림차순으로 정렬해 출력하라. 
 ```{python}
-
+mpg.query('category == "compact"') \
+   .groupby('manufacturer', as_index = False) \
+   .agg(n = ('category', 'count')) \
+   .sort_values('n', ascending = False)
 ```
 
 
