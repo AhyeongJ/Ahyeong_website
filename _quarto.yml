@@ -9,8 +9,11 @@ website:
       - href: index.qmd
         text: Home
       - href: about.qmd
+        text: about
       - href: hw1.qmd
-        text: 숙제1
+        text: hw1 
+      - href: note 3.qmd
+        text: note3
 format:
   html:
     theme: cosmo

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>아영의 웹사이트 - 2일차 강의 노트</title>
+<title>아영의 웹사이트 - Ahyeong Website</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -67,7 +33,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -105,7 +70,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -126,11 +91,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="dropdown-header">
- <span class="menu-text">about.qmd</span></li>
+  <li class="nav-item">
+    <a class="nav-link" href="./about.qmd"> 
+<span class="menu-text">about</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" href="./hw1.html"> 
-<span class="menu-text">숙제1</span></a>
+<span class="menu-text">hw1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./note 3.html"> 
+<span class="menu-text">note3</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -143,387 +114,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    </div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-about-jolla content">
+  <img src="me.jpg" class="about-image
+  round " style="height: 15em; width: 15em;">
+ <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">2일차 강의 노트</h1>
+<h1 class="title">Ahyeong Website</h1>
 </div>
-
-
-
 <div class="quarto-title-meta">
-
-    
-  
-    
   </div>
-  
+</header><main class="content" id="quarto-document-content">
 
 
-</header>
-
-
-<section id="python" class="level4">
-<h4 class="anchored" data-anchor-id="python">Python</h4>
-<ul>
-<li><code>Ctrl + Enter</code></li>
-<li><code>Shift + 화살표</code>: 블록</li>
-<li><code>Shift + Alt + 아래화살표</code>: 아래로 복사</li>
-<li><code>Ctrl + Alt + 아래화살표</code>: 커서 여러개</li>
-</ul>
-<div id="54017b11" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>1</code></pre>
+</main> 
+  <hr class="about-sep">
+   <div class="about-links">
+  <a href="https://github.com/AhyeongJ" class="about-link" rel="" target="">
+    <i class="bi bi-github"></i>
+     <span class="about-link-text">Github</span>
+  </a>
 </div>
 </div>
-<ul>
-<li><p><code>ls(dir)</code>: 파일 목록</p></li>
-<li><p><code>cd</code>: 폴더 이동</p></li>
-<li><p><code>.</code> 현재폴더</p></li>
-<li><p><code>..</code> 상위폴더</p></li>
-<li><p>Show folder in new window: 해당위치 탐색기</p></li>
-<li><p>앞에 조금 적고 <code>Tab</code>: 자동완성</p></li>
-<li><p><code>cls</code>: 화면 정리</p></li>
-</ul>
-</section>
-<section id="변수에-값을-할당" class="level4">
-<h4 class="anchored" data-anchor-id="변수에-값을-할당">변수에 값을 할당</h4>
-<div id="9aa8a8cc" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="dv">10</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>greeting <span class="op">=</span> <span class="st">"안녕하세요!"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>greeting <span class="op">=</span> <span class="st">'안녕하세요!'</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>greeting <span class="op">=</span> <span class="st">"'안녕하세요'라고 말했다"</span> <span class="co"># 작은따옴표, 큰따옴표가 쓰이는 이유</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="리스트-만들기" class="level4">
-<h4 class="anchored" data-anchor-id="리스트-만들기">리스트 만들기</h4>
-<div id="542640c7" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>var1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(var1)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>var2 <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(var2) </span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(var1 <span class="op">+</span> var2)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="st">'안녕하세요!'</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="st">'LS 빅데이터 스쿨!'</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">+</span> b)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">+</span> <span class="st">' '</span> <span class="op">+</span> b)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 문자는 문자끼리만 더할 수 있음. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1, 2, 3]
-[4, 5, 6]
-[1, 2, 3, 4, 5, 6]
-안녕하세요!LS 빅데이터 스쿨!
-안녕하세요! LS 빅데이터 스쿨!</code></pre>
-</div>
-</div>
-</section>
-<section id="변수-생성" class="level4">
-<h4 class="anchored" data-anchor-id="변수-생성">변수 생성</h4>
-<div id="78bdbbed" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>num1 <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>num2 <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(num1 <span class="op">+</span> num2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>8</code></pre>
-</div>
-</div>
-</section>
-<section id="변수명-스타일" class="level4">
-<h4 class="anchored" data-anchor-id="변수명-스타일">변수명 스타일</h4>
-<ul>
-<li>스네이크 케이스: 모든 글자 소문자, 단어 사이에 밑줄 사용 ex) ls_bigdata_shool</li>
-<li>카멜 케이스: 각 단어의 첫 글자를 대문자로 시작 ex) LsBigdataSchool</li>
-</ul>
-</section>
-<section id="기본산술연산자" class="level4">
-<h4 class="anchored" data-anchor-id="기본산술연산자">기본산술연산자</h4>
-<div id="acba4878" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">3.3</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">+</span> b) <span class="co">#덧셈(정수는 실수로 변환해 계산)</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">-</span> b) <span class="co">#뺄셈</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">*</span> b) <span class="co">#곱셈</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">/</span> b) <span class="co">#나눗셈</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">%</span> b) <span class="co">#나머지</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">//</span> b) <span class="co">#몫(정수나눗셈)</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">**</span> b) <span class="co">#거듭제곱 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>13.3
-6.7
-33.0
-3.0303030303030303
-0.10000000000000053
-3.0
-1995.2623149688789</code></pre>
-</div>
-</div>
-</section>
-<section id="비교관련연산자" class="level4">
-<h4 class="anchored" data-anchor-id="비교관련연산자">비교관련연산자</h4>
-<div id="c4494256" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">==</span> b)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">!=</span> b)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">&lt;</span> b)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">&gt;</span> b)</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">&gt;=</span> b)</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">&lt;=</span> b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>False
-True
-True
-False
-False
-True</code></pre>
-</div>
-</div>
-</section>
-<section id="연습문제-num1-num2-만들고-큰-수-구하기" class="level4">
-<h4 class="anchored" data-anchor-id="연습문제-num1-num2-만들고-큰-수-구하기">연습문제 num1 num2 만들고 큰 수 구하기</h4>
-<div id="a74e9d48" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>num1 <span class="op">=</span> ((<span class="dv">2</span><span class="op">**</span><span class="dv">4</span>) <span class="op">+</span> (<span class="dv">12453</span><span class="op">//</span><span class="dv">7</span>)) <span class="op">%</span> <span class="dv">8</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>num2 <span class="op">=</span> ((<span class="dv">9</span><span class="op">**</span><span class="dv">7</span>) <span class="op">/</span> <span class="dv">12</span>) <span class="op">*</span> (<span class="dv">36452</span> <span class="op">%</span> <span class="dv">253</span>)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(num1 <span class="op">&lt;</span> num2) </span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>user_age <span class="op">=</span> <span class="dv">22</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>is_adult <span class="op">=</span> user_age <span class="op">&gt;=</span> <span class="dv">18</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"성인입니까?"</span>, is_adult)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>True
-성인입니까? True</code></pre>
-</div>
-</div>
-</section>
-<section id="true나-false-같은-예약어는-변수명으로-쓰일-수-없다" class="level4">
-<h4 class="anchored" data-anchor-id="true나-false-같은-예약어는-변수명으로-쓰일-수-없다">True나 False 같은 예약어는 변수명으로 쓰일 수 없다</h4>
-<div id="dd1d4f7e" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>true <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="st">"True"</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">#python은 대소문자를 구분함. </span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> true  <span class="co">#위와 달리 true에 대해서 값을 할당했기 때문에 true 변수의 값을 c에 할당함. </span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="va">True</span>  <span class="co">#boolean으로 부여  </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="논리관련연산자-boolean" class="level4">
-<h4 class="anchored" data-anchor-id="논리관련연산자-boolean">논리관련연산자 (Boolean)</h4>
-<div id="249cc62e" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="kw">and</span> b)</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="kw">or</span> b)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="kw">not</span> a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>False
-True
-False</code></pre>
-</div>
-</div>
-</section>
-<section id="and-연산자" class="level4">
-<h4 class="anchored" data-anchor-id="and-연산자">and 연산자</h4>
-<ul>
-<li>True: 1 , False: 0</li>
-</ul>
-<div id="6450b453" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="va">True</span> <span class="op">+</span> <span class="va">True</span>) </span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="va">True</span> <span class="op">+</span> <span class="va">False</span>) </span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="va">False</span> <span class="op">+</span> <span class="va">False</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2
-1
-0</code></pre>
-</div>
-</div>
-</section>
-<section id="and는-곱으로-치환-가능" class="level4">
-<h4 class="anchored" data-anchor-id="and는-곱으로-치환-가능">and는 곱(*)으로 치환 가능</h4>
-<div id="c4548c75" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="va">True</span> <span class="op">*</span> <span class="va">True</span>) <span class="co">#1</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="va">True</span> <span class="op">*</span> <span class="va">False</span>) <span class="co">#0</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="va">False</span> <span class="op">*</span> <span class="va">False</span>) <span class="co">#0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>1
-0
-0</code></pre>
-</div>
-</div>
-</section>
-<section id="or-연산자" class="level4">
-<h4 class="anchored" data-anchor-id="or-연산자">or 연산자</h4>
-<div id="a72059f2" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="va">True</span> <span class="kw">or</span> <span class="va">True</span>)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="va">True</span> <span class="kw">or</span> <span class="va">False</span>)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="va">False</span> <span class="kw">or</span> <span class="va">True</span>)</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="va">False</span> <span class="kw">or</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>True
-True
-True
-False</code></pre>
-</div>
-</div>
-</section>
-<section id="or은-덧셈과-같음" class="level4">
-<h4 class="anchored" data-anchor-id="or은-덧셈과-같음">or은 덧셈(+)과 같음</h4>
-<div id="04f08279" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="kw">or</span> b)</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">min</span>(a <span class="op">+</span> b , <span class="dv">1</span>)) <span class="co">#수식, 0일 때 제외하고 모든 결과 1 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>True
-1</code></pre>
-</div>
-</div>
-</section>
-<section id="복합대입연산자" class="level4">
-<h4 class="anchored" data-anchor-id="복합대입연산자">복합대입연산자</h4>
-<div id="837f37e0" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">+=</span> <span class="dv">10</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">-=</span> <span class="dv">10</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">*=</span> <span class="dv">2</span> </span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>a <span class="op">/=</span> <span class="dv">2</span></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>a <span class="op">%=</span> <span class="dv">14</span> <span class="co">#나머지a</span></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>a <span class="op">**=</span> <span class="dv">2</span></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>a <span class="op">//=</span> <span class="dv">2</span> <span class="co">#몫</span></span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
-<pre><code>2.0</code></pre>
-</div>
-</div>
-</section>
-<section id="문자열-반복" class="level4">
-<h4 class="anchored" data-anchor-id="문자열-반복">문자열 반복</h4>
-<div id="6b6bf3f6" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>str1 <span class="op">=</span> <span class="st">"Hello! "</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>repeated_str1 <span class="op">=</span> str1 <span class="op">*</span> <span class="dv">3</span>  <span class="co">#문자열과 숫자의 곲셈은 정수만 가능 </span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Repeated string:"</span>, repeated_str1)</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(str1 <span class="op">*</span> (<span class="op">-</span><span class="dv">2</span>)) <span class="co">#error 안 뜲 '' </span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(str1 <span class="op">*</span> <span class="dv">0</span>)  <span class="co">#error 안 뜲 '' </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Repeated string: Hello! Hello! Hello! 
-
-</code></pre>
-</div>
-</div>
-<ul>
-<li>정수: integer</li>
-<li>실수: float (double)</li>
-</ul>
-</section>
-<section id="단항-연산자" class="level4">
-<h4 class="anchored" data-anchor-id="단항-연산자">단항 연산자</h4>
-<div id="b8ba02d9" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="op">+</span>x) <span class="co">#양수 강조</span></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="op">-</span>x) <span class="co">#부호 변환</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="op">~</span>x) <span class="co">#x의 비트를 반전 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>5
--5
--6</code></pre>
-</div>
-</div>
-</section>
-<section id="비트-연산자" class="level4">
-<h4 class="anchored" data-anchor-id="비트-연산자">비트 연산자</h4>
-<ul>
-<li>bin()함수를 사용하면 정수의 이진수 표현을 반환함</li>
-<li>bin()은 이진수 표현을 문자열 형식으로 제공함. 모든 이진수 문자열은 0b 접두사로 시작</li>
-</ul>
-</section>
-<section id="패키지-설치하기" class="level4">
-<h4 class="anchored" data-anchor-id="패키지-설치하기">패키지 설치하기</h4>
-<ol type="1">
-<li>Terminal에서 설치하기</li>
-<li>느낌표(!) 뒤에 설치 코드 입력하기</li>
-</ol>
-<ul>
-<li>설치코드: <code>pip install 패키지명</code></li>
-</ul>
-<div id="88fec737" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pydataset</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>pydataset.data() <span class="co">#데이터셋 목록 출력 (757개의 데이터셋)</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pydataset.data(<span class="st">"AirPassengers"</span>) <span class="co"># 특정 데이터 불러오기 </span></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>df</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install pandas <span class="im">as</span> pd</span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install numpy <span class="im">as</span> np</span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install sklearn</span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>                                </span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Requirement already satisfied: pandas in c:\users\user\ds\python\python312\lib\site-packages (2.2.2)
-Requirement already satisfied: numpy in c:\users\user\ds\python\python312\lib\site-packages (2.0.0)
-Collecting sklearn
-  Using cached sklearn-0.0.post12.tar.gz (2.6 kB)
-  Installing build dependencies: started
-  Installing build dependencies: finished with status 'done'
-  Getting requirements to build wheel: started
-  Getting requirements to build wheel: finished with status 'error'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ERROR: Could not find a version that satisfies the requirement as (from versions: none)
-ERROR: No matching distribution found for as
-
-[notice] A new release of pip is available: 24.0 -&gt; 24.1.2
-[notice] To update, run: python.exe -m pip install --upgrade pip
-ERROR: Could not find a version that satisfies the requirement as (from versions: none)
-ERROR: No matching distribution found for as
-
-[notice] A new release of pip is available: 24.0 -&gt; 24.1.2
-[notice] To update, run: python.exe -m pip install --upgrade pip
-  error: subprocess-exited-with-error
-  
-  × Getting requirements to build wheel did not run successfully.
-  │ exit code: 1
-  ╰─&gt; [15 lines of output]
-      The 'sklearn' PyPI package is deprecated, use 'scikit-learn'
-      rather than 'sklearn' for pip commands.
-      
-      Here is how to fix this error in the main use cases:
-      - use 'pip install scikit-learn' rather than 'pip install sklearn'
-      - replace 'sklearn' by 'scikit-learn' in your pip requirements files
-        (requirements.txt, setup.py, setup.cfg, Pipfile, etc ...)
-      - if the 'sklearn' package is used by one of your dependencies,
-        it would be great if you take some time to track which package uses
-        'sklearn' instead of 'scikit-learn' and report it to their issue tracker
-      - as a last resort, set the environment variable
-        SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL=True to avoid this error
-      
-      More information is available at
-      https://github.com/scikit-learn/sklearn-pypi-package
-      [end of output]
-  
-  note: This error originates from a subprocess, and is likely not a problem with pip.
-error: subprocess-exited-with-error
-
-× Getting requirements to build wheel did not run successfully.
-│ exit code: 1
-╰─&gt; See above for output.
-
-note: This error originates from a subprocess, and is likely not a problem with pip.
-
-[notice] A new release of pip is available: 24.0 -&gt; 24.1.2
-[notice] To update, run: python.exe -m pip install --upgrade pip</code></pre>
-</div>
-</div>
-
-
-</section>
-
-</main> <!-- /main -->
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -544,13 +158,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
