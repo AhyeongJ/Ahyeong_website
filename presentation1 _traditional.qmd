@@ -1,6 +1,5 @@
 ---
 title: "presentation1_traditional"
-editor: visual
 jupyter: python3
 ---
 

@@ -141,6 +141,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">hw1</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./hw2.html"> 
+<span class="menu-text">hw2</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./note 3.html"> 
 <span class="menu-text">note3</span></a>
   </li>  
@@ -186,7 +190,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="필요한-패키지-불러오기" class="level4">
 <h4 class="anchored" data-anchor-id="필요한-패키지-불러오기">필요한 패키지 불러오기</h4>
-<div id="8564d9e2" class="cell" data-execution_count="1">
+<div id="5a5ade19" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -195,14 +199,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="데이터-불러오기" class="level4">
 <h4 class="anchored" data-anchor-id="데이터-불러오기">데이터 불러오기</h4>
-<div id="210b7ffd" class="cell" data-execution_count="2">
+<div id="e9fd0c47" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>market <span class="op">=</span> pd.read_excel(<span class="st">"C:/Users/User/Documents/LS 빅데이터 스쿨/lsbigdata_project1/data/traditionalmarket.xlsx"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>market2 <span class="op">=</span> market.copy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="변수명-재설정하기" class="level4">
 <h4 class="anchored" data-anchor-id="변수명-재설정하기">변수명 재설정하기</h4>
-<div id="c1bc8ad3" class="cell" data-execution_count="3">
+<div id="1040a816" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>market2 <span class="op">=</span> market2.rename(columns <span class="op">=</span> {<span class="st">"시장명"</span> : <span class="st">"market_name"</span>, </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"시장유형"</span> : <span class="st">"type"</span>,</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"소재지도로명주소"</span> : <span class="st">"open_period"</span>,</span>
@@ -217,7 +221,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="데이터-변수별-요약통계량과-정보-확인하기" class="level4">
 <h4 class="anchored" data-anchor-id="데이터-변수별-요약통계량과-정보-확인하기">데이터 변수별 요약통계량과 정보 확인하기</h4>
-<div id="ef2b7572" class="cell" data-execution_count="4">
+<div id="ce30dd29" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>market2[<span class="st">'market_count'</span>].describe()</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>market2[<span class="st">"public_toilet"</span>].info()</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>market2[<span class="st">"parking_lot"</span>].info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -243,7 +247,7 @@ memory usage: 11.4+ KB</code></pre>
 </section>
 <section id="market_scale-파생변수-생성과-막대그래프-확인" class="level4">
 <h4 class="anchored" data-anchor-id="market_scale-파생변수-생성과-막대그래프-확인">market_scale 파생변수 생성과 막대그래프 확인</h4>
-<div id="dc7868a4" class="cell" data-execution_count="5">
+<div id="c88e4900" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>market2 <span class="op">=</span> market2.assign(market_scale <span class="op">=</span> np.where(market2[<span class="st">"market_count"</span>] <span class="op">&gt;=</span> <span class="dv">134</span>, <span class="st">"large"</span>, </span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                                        np.where(market2[<span class="st">"market_count"</span>] <span class="op">&gt;=</span> <span class="dv">50</span>, <span class="st">"medium"</span>, <span class="st">"small"</span>)))</span>
@@ -260,7 +264,7 @@ memory usage: 11.4+ KB</code></pre>
 </section>
 <section id="conv_level-파생변수-생성과-막대그래프-확인인" class="level4">
 <h4 class="anchored" data-anchor-id="conv_level-파생변수-생성과-막대그래프-확인인">conv_level 파생변수 생성과 막대그래프 확인인</h4>
-<div id="0b677365" class="cell" data-execution_count="6">
+<div id="e5b88af5" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>market2[<span class="st">'conv_level'</span>] <span class="op">=</span> np.where((market2[<span class="st">'public_toilet'</span>] <span class="op">==</span> <span class="st">'Y'</span>) <span class="op">&amp;</span> (market2[<span class="st">'parking_lot'</span>] <span class="op">==</span> <span class="st">'Y'</span>), <span class="st">'high'</span>, </span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                   np.where((market2[<span class="st">'public_toilet'</span>] <span class="op">==</span> <span class="st">'N'</span>) <span class="op">&amp;</span> (market2[<span class="st">'public_toilet'</span>] <span class="op">==</span> <span class="st">'N'</span>) , <span class="st">'low'</span>, <span class="st">'intermediate'</span>))</span>
@@ -277,7 +281,7 @@ memory usage: 11.4+ KB</code></pre>
 </section>
 <section id="시장유형-및-점포규모의-시장개수-알아보기" class="level4">
 <h4 class="anchored" data-anchor-id="시장유형-및-점포규모의-시장개수-알아보기">시장유형 및 점포규모의 시장개수 알아보기</h4>
-<div id="083b053f" class="cell" data-execution_count="7">
+<div id="90358263" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> market2.groupby([<span class="st">"type"</span>, <span class="st">"market_scale"</span>], as_index <span class="op">=</span> <span class="va">False</span>) <span class="op">\</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>            .agg(market_count <span class="op">=</span> (<span class="st">"market_scale"</span>, <span class="st">"count"</span>))</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>df.sort_values(<span class="st">'market_count'</span>, ascending <span class="op">=</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -358,7 +362,7 @@ memory usage: 11.4+ KB</code></pre>
 </section>
 <section id="막대그래프로-알아보기" class="level4">
 <h4 class="anchored" data-anchor-id="막대그래프로-알아보기">막대그래프로 알아보기</h4>
-<div id="81eb20e1" class="cell" data-execution_count="8">
+<div id="a86c0ac7" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sns.barplot(data <span class="op">=</span> df, x <span class="op">=</span> <span class="st">'type'</span>, y <span class="op">=</span> <span class="st">'market_count'</span>, hue <span class="op">=</span> <span class="st">'market_scale'</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
