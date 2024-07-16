@@ -1,5 +1,5 @@
 ---
-title: "Ahyeong Website"
+title: "Ahyeong Jeong"
 toc: false
 about: 
     id: hero-heading
