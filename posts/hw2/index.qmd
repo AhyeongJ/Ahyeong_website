@@ -13,7 +13,7 @@ import numpy as np
 ```
 
 ```{python}
-mpg = pd.read_csv("data/mpg.csv")
+mpg = pd.read_csv("C:/Users/USER/Documents/LS 빅데이터 스쿨/Doit_Python/Data/mpg.csv")
 displ1 = mpg.query('displ <= 4')
 displ2 = mpg.query('displ >= 5')
 displ1['hwy'].mean().round(2)

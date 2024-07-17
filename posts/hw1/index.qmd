@@ -84,6 +84,7 @@ midwest.head()
 ### Q5. `'large'`와 `'small'`에 해당하는 지역이 얼마나 많은지 빈도표와 빈도 막대 그래프를 만들어 확인해보세요.
 
 ```{python}
+plt.clf()
 freq_asian_scale = midwest['asian_scale'].value_counts()
 print(freq_asian_scale)
 freq_asian_scale.plot.bar(rot = 0)
