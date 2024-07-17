@@ -1,8 +1,8 @@
 ---
-title: "LS Bigdata School Homework 1"
+title: "EasyPython Practice Ch4&5"
 author: Ahyeong Jeong
 date: "2024-07-17"
-categories: [homework]
+categories: [EasyPython]
 ---
 
 ## p.84 혼자서 해보기
