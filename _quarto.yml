@@ -18,6 +18,7 @@ website:
         text: note3
       - href: presentation1_traditional.qmd
         text: presentation1
+        
 format:
   html:
     theme: cosmo
