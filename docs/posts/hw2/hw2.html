@@ -155,7 +155,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="quarto-title column-body">
       <h1 class="title">EasyPython Practice Ch6</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">Practice</div>
+                <div class="quarto-category">EasyPython</div>
               </div>
                   </div>
   </div>
@@ -211,11 +211,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="q1." class="level4">
 <h4 class="anchored" data-anchor-id="q1.">Q1.</h4>
 <p>자동차 배기량에 따라 고속도로 연비가 다른지 알아보자 <code>displ</code>이 4이하인 자동차와 5 이상인 자동차 중 어떤 자동차의 <code>hwy</code> 평균이 더 높은지 알아보세요</p>
-<div id="5cdb69a2" class="cell" data-execution_count="1">
+<div id="b1a4c270" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="62904368" class="cell" data-execution_count="2">
+<div id="e052716e" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">=</span> pd.read_csv(<span class="st">"C:/Users/USER/Documents/LS 빅데이터 스쿨/Doit_Python/Data/mpg.csv"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>displ1 <span class="op">=</span> mpg.query(<span class="st">'displ &lt;= 4'</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>displ2 <span class="op">=</span> mpg.query(<span class="st">'displ &gt;= 5'</span>)</span>
@@ -229,7 +229,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="q2." class="level4">
 <h4 class="anchored" data-anchor-id="q2.">Q2.</h4>
 <p>자동차 제조 회사에 따라 도시 연비가 어떻게 다른지 알아보자. <code>audi</code>와 <code>toyota</code> 중 어느 <code>manufacturer</code>의 <code>cty</code> 평균이 더 높은지 알아보세요</p>
-<div id="896951e1" class="cell" data-execution_count="3">
+<div id="680d2263" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>audi <span class="op">=</span> mpg.query(<span class="st">'manufacturer == "audi"'</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>toyota <span class="op">=</span> mpg.query(<span class="st">'manufacturer == "toyota"'</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>audi[<span class="st">'cty'</span>].mean().<span class="bu">round</span>(<span class="dv">2</span>)</span>
@@ -242,7 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="q3." class="level4">
 <h4 class="anchored" data-anchor-id="q3.">Q3.</h4>
 <p><code>chevrolet</code>, <code>ford</code>, <code>honda</code> 자동차의 고속도로 연비 평균을 알아보자. 세 회사의 데이터를 추출한 다음 <code>hwy</code>전체 평균을 구해보세요.</p>
-<div id="0517fe94" class="cell" data-execution_count="4">
+<div id="80861ff8" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>car3 <span class="op">=</span> mpg.query(<span class="st">'manufacturer in ["chevrolet", "ford", "honda"]'</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>car3[<span class="st">'hwy'</span>].mean().<span class="bu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -256,7 +256,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="q1.-1" class="level4">
 <h4 class="anchored" data-anchor-id="q1.-1">Q1.</h4>
 <p><code>mpg</code> 데이터 중 일부만 추출해 분석에 활용하자. <code>mpg</code> 데이터에서 <code>category</code>, <code>cty</code> 변수를 추출해 새로운 데이터를 만들어라. 새로 만든 데이터의 일부를 추출해 두 변수로만 구성되어 있는지 확인하세요.</p>
-<div id="8462c82f" class="cell" data-execution_count="5">
+<div id="8129ee22" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> mpg[[<span class="st">'category'</span>,<span class="st">'cty'</span>]]</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
@@ -307,7 +307,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="q2.-1" class="level4">
 <h4 class="anchored" data-anchor-id="q2.-1">Q2.</h4>
 <p>자동차 종류에 따라 도시 연비가 어떻게 다른지 알아보고자 한다. 앞에서 추출한 데이터를 이용해 <code>category</code>가 <code>suv</code>인 자동차와 <code>compact</code>인 자동차 중 어떤 자동차의 <code>cty</code> 평균이 더 높은가.</p>
-<div id="17e1d6f8" class="cell" data-execution_count="6">
+<div id="1892f382" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df.query(<span class="st">'category in ["suv", "compact"]'</span>) <span class="op">\</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  .groupby(<span class="st">'category'</span>) <span class="op">\</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  .agg(cty_mean <span class="op">=</span> (<span class="st">"cty"</span>, <span class="st">"mean"</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -348,7 +348,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="q1.-2" class="level4">
 <h4 class="anchored" data-anchor-id="q1.-2">Q1.</h4>
 <p><code>audi</code>에서 생산한 자동차 중에 어떤 자동차 모델의 <code>hwy</code>가 높은지 알아보자 <code>audi</code>에서 생산한 자동차 중 <code>hwy</code>가 1~5위에 해당하는 자동차의 데이터를 출력하라</p>
-<div id="712283b4" class="cell" data-execution_count="7">
+<div id="bcfb0703" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>mpg.query(<span class="st">"manufacturer == 'audi'"</span>) <span class="op">\</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    .sort_values(<span class="st">'hwy'</span>, ascending <span class="op">=</span> <span class="va">False</span>) <span class="op">\</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    .head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -457,7 +457,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="q1.-3" class="level4">
 <h4 class="anchored" data-anchor-id="q1.-3">Q1.</h4>
 <p><code>mpg</code> 데이터 복사본을 만들고, <code>cty</code>와 <code>hwy</code>를 더한 ’합산 연비 변수’를 추가하라.</p>
-<div id="6d74eb0f" class="cell" data-execution_count="8">
+<div id="01c43699" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>mpg2 <span class="op">=</span> mpg.copy()</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>mpg2 <span class="op">=</span> mpg2.assign(total <span class="op">=</span> mpg2[<span class="st">'cty'</span>] <span class="op">+</span> mpg2[<span class="st">'hwy'</span>])</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>mpg2.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -569,7 +569,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="q2.-2" class="level4">
 <h4 class="anchored" data-anchor-id="q2.-2">Q2.</h4>
 <p>앞에서 만든 ’합산 연비 변수’를 2로 나눠 ’평균 연비 변수’를 추가하라.</p>
-<div id="4718e806" class="cell" data-execution_count="9">
+<div id="d8275fa2" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>mpg2 <span class="op">=</span> mpg2.assign(mean <span class="op">=</span> mpg2[<span class="st">'total'</span>] <span class="op">/</span> <span class="dv">2</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>mpg2.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
@@ -686,7 +686,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="q3.-1" class="level4">
 <h4 class="anchored" data-anchor-id="q3.-1">Q3.</h4>
 <p>’평균 연비 변수’가 가장 높은 자동차 3종의 데이터를 출력하라</p>
-<div id="cc358f8a" class="cell" data-execution_count="10">
+<div id="b6db0f15" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>mpg2.sort_values(<span class="st">'mean'</span>)[<span class="st">'model'</span>].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>54       dakota pickup 4wd
@@ -701,7 +701,7 @@ Name: model, dtype: object</code></pre>
 <section id="q4." class="level4">
 <h4 class="anchored" data-anchor-id="q4.">Q4.</h4>
 <p>1~3번 문제를 해결할 수 있는 하나로 연결된 <code>pandas</code> 구문을 만들어 실행해 보자. 데이터는 복사본 대신 <code>mpg</code> 원본을 이용하라.</p>
-<div id="fab6fa77" class="cell" data-execution_count="11">
+<div id="11f9372f" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>mpg.assign(total <span class="op">=</span> mpg[<span class="st">"cty"</span>] <span class="op">+</span> mpg[<span class="st">"cty"</span>],</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>           total_mean <span class="op">=</span> <span class="kw">lambda</span> x : x[<span class="st">"total"</span>] <span class="op">/</span> <span class="dv">2</span>) <span class="op">\</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>   .sort_values(<span class="st">'total_mean'</span>, ascending <span class="op">=</span> <span class="va">False</span>) <span class="op">\</span></span>
@@ -791,7 +791,7 @@ Name: model, dtype: object</code></pre>
 <section id="q1.-4" class="level4">
 <h4 class="anchored" data-anchor-id="q1.-4">Q1.</h4>
 <p><code>mpg</code> 데이터의 <code>category</code>는 자동차를 특징에 따라 <code>suv</code>, <code>compact</code> 등 일곱 종류로 분류한 변수 어떤 차종의 도시 연비가 높은지 비교해 보려고 한다. <code>category</code>별 <code>cty</code> 평균을 구해 보자.</p>
-<div id="505911e5" class="cell" data-execution_count="12">
+<div id="36313762" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>mpg.groupby(<span class="st">"category"</span>, as_index <span class="op">=</span> <span class="va">False</span>) <span class="op">\</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>   .agg(cty_mean <span class="op">=</span> (<span class="st">'cty'</span>, <span class="st">'mean'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
@@ -852,7 +852,7 @@ Name: model, dtype: object</code></pre>
 <section id="q2.-3" class="level4">
 <h4 class="anchored" data-anchor-id="q2.-3">Q2.</h4>
 <p>앞 문제의 출력 결과는 <code>category</code> 값 알파벳순으로 정렬되어 있다. 어떤 차종의 도시 연비가 높은지 쉽게 알아볼 수 있도록 <code>cty</code> 평균이 높은 순으로 정렬해 출력하라.</p>
-<div id="a0d2b6b2" class="cell" data-execution_count="13">
+<div id="3387cd42" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>mpg.groupby(<span class="st">"category"</span>, as_index <span class="op">=</span> <span class="va">False</span>) <span class="op">\</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>   .agg(cty_mean <span class="op">=</span> (<span class="st">'cty'</span>, <span class="st">'mean'</span>)) <span class="op">\</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>   .sort_values(<span class="st">'cty_mean'</span>, ascending <span class="op">=</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -914,7 +914,7 @@ Name: model, dtype: object</code></pre>
 <section id="q3.-2" class="level4">
 <h4 class="anchored" data-anchor-id="q3.-2">Q3.</h4>
 <p>어떤 회사 자동차의 <code>hwy</code>가 가장 높은지 알아보려고 한다. <code>hwy</code> 평균이 가장 높은 회사 세 곳을 출력하세요.</p>
-<div id="1a4d2cd1" class="cell" data-execution_count="14">
+<div id="95f488a5" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>mpg.groupby(<span class="st">'manufacturer'</span>, as_index <span class="op">=</span> <span class="va">False</span>) <span class="op">\</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>   .agg(mean_hwy <span class="op">=</span> (<span class="st">'hwy'</span>, <span class="st">'mean'</span>)) <span class="op">\</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>   .sort_values(<span class="st">'mean_hwy'</span>, ascending <span class="op">=</span> <span class="va">False</span>)<span class="op">\</span></span>
@@ -954,7 +954,7 @@ Name: model, dtype: object</code></pre>
 <section id="q4.-1" class="level4">
 <h4 class="anchored" data-anchor-id="q4.-1">Q4.</h4>
 <p>어떤 회사에서 <code>compact</code> 차종을 가장 많이 생산하는지 알아보려고 한다. 회사별 <code>compact</code>차종 수를 내림차순으로 정렬해 출력하라.</p>
-<div id="71b51d81" class="cell" data-execution_count="15">
+<div id="0bf601e0" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>mpg.query(<span class="st">'category == "compact"'</span>) <span class="op">\</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>   .groupby(<span class="st">'manufacturer'</span>, as_index <span class="op">=</span> <span class="va">False</span>) <span class="op">\</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>   .agg(n <span class="op">=</span> (<span class="st">'category'</span>, <span class="st">'count'</span>)) <span class="op">\</span></span>
@@ -1008,7 +1008,7 @@ Name: model, dtype: object</code></pre>
 <section id="p.173" class="level2">
 <h2 class="anchored" data-anchor-id="p.173">p.173</h2>
 <p>문제 준비</p>
-<div id="d90db2c6" class="cell" data-execution_count="16">
+<div id="bb504048" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>fuel <span class="op">=</span> pd.DataFrame({<span class="st">'fl'</span>       : [<span class="st">'c'</span>, <span class="st">'d'</span>, <span class="st">'e'</span>, <span class="st">'p'</span>, <span class="st">'r'</span>],</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'price_fl'</span> : [<span class="fl">2.35</span>, <span class="fl">2.38</span>, <span class="fl">2.11</span>, <span class="fl">2.76</span>, <span class="fl">2.22</span>]})</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>fuel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1059,7 +1059,7 @@ Name: model, dtype: object</code></pre>
 <section id="q1.-5" class="level4">
 <h4 class="anchored" data-anchor-id="q1.-5">Q1.</h4>
 <p><code>mpg</code> 데이터에는 연료 종류를 나타낸 <code>f1</code> 변수는 있지만 연료 가격을 나타낸 변수는 없다. 앞에서 만든 <code>fuel</code>데이터를 이용해 <code>mpg</code> 데이터에 <code>price_f1</code> 변수를 추가하라.</p>
-<div id="f37b75b1" class="cell" data-execution_count="17">
+<div id="60e54a00" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">=</span> pd.read_csv(<span class="st">"C:/Users/USER/Documents/LS 빅데이터 스쿨/myportfolio/data/mpg.csv"</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">=</span> mpg.merge(fuel, how <span class="op">=</span> <span class="st">"left"</span>, on <span class="op">=</span> <span class="st">"fl"</span>)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>mpg.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1171,7 +1171,7 @@ Name: model, dtype: object</code></pre>
 <section id="q2.-4" class="level4">
 <h4 class="anchored" data-anchor-id="q2.-4">Q2.</h4>
 <p>연료 가격 변수가 잘 추가됐는지 확인하기 위해 <code>model</code>, <code>fl</code>, <code>price_fl</code> 변수를 추출해 앞부분 5행을 출력하라.</p>
-<div id="a1896586" class="cell" data-execution_count="18">
+<div id="7fe35293" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>mpg[[<span class="st">'model'</span>, <span class="st">'fl'</span>, <span class="st">'price_fl'</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <div>
@@ -1229,7 +1229,7 @@ Name: model, dtype: object</code></pre>
 <h2 class="anchored" data-anchor-id="p.176">p.176</h2>
 <section id="준비하기" class="level4">
 <h4 class="anchored" data-anchor-id="준비하기">준비하기</h4>
-<div id="99a019f8" class="cell" data-execution_count="19">
+<div id="60cc5d73" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>midwest <span class="op">=</span> pd.read_csv(<span class="st">"C:/Users/User/Documents/LS 빅데이터 스쿨/lsbigdata_project1/data/midwest.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1238,7 +1238,7 @@ Name: model, dtype: object</code></pre>
 <section id="q1" class="level4">
 <h4 class="anchored" data-anchor-id="q1">Q1</h4>
 <p><code>popadults</code>는 해당 지역의 성인 인구, <code>poptotal</code>은 전체 인구를 나타냅니다. <code>midwest</code> 데이터에 ‘전체 인구 대비 미성년 인구 백분율’ 변수를 추가하세요.</p>
-<div id="a54dbcf9" class="cell" data-execution_count="20">
+<div id="ecf7fc79" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>midwest[<span class="st">'nonadult_ratio'</span>] <span class="op">=</span> (midwest[<span class="st">'poptotal'</span>] <span class="op">-</span> midwest[<span class="st">'popadults'</span>]) <span class="op">/</span> midwest[<span class="st">'poptotal'</span>] <span class="op">*</span> <span class="dv">100</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>midwest.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
@@ -1404,7 +1404,7 @@ Name: model, dtype: object</code></pre>
 <section id="q2.-5" class="level4">
 <h4 class="anchored" data-anchor-id="q2.-5">Q2.</h4>
 <p>미성년 인구 백분율이 가장 높은 상위 5개 <code>county</code>의 미성년 인구 백분율을 출력하라.</p>
-<div id="3fb46cf3" class="cell" data-execution_count="21">
+<div id="150f7ca3" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>midwest.sort_values(<span class="st">'nonadult_ratio'</span>,ascending <span class="op">=</span> <span class="va">False</span>) <span class="op">\</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>       .head() <span class="op">\</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>       [[<span class="st">'county'</span>, <span class="st">'nonadult_ratio'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1456,7 +1456,7 @@ Name: model, dtype: object</code></pre>
 <section id="q3.-3" class="level4">
 <h4 class="anchored" data-anchor-id="q3.-3">Q3.</h4>
 <p>분류표의 기준에 따라 미성년 비율 등급 변수를 추가하고, 각 등급에 몇 개의 지역이 있는지 알아보자.</p>
-<div id="b5373a6c" class="cell" data-execution_count="22">
+<div id="8541aae4" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>midwest[<span class="st">'grade'</span>] <span class="op">=</span> np.where(midwest[<span class="st">'nonadult_ratio'</span>] <span class="op">&gt;=</span> <span class="dv">40</span>, <span class="st">'large'</span>,</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>                   np.where(midwest[<span class="st">'nonadult_ratio'</span>] <span class="op">&gt;=</span> <span class="dv">30</span>, <span class="st">'middle'</span>, <span class="st">'small'</span>))</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>midwest.groupby(<span class="st">'grade'</span>, as_index <span class="op">=</span> <span class="va">False</span>) <span class="op">\</span></span>
@@ -1499,7 +1499,7 @@ Name: model, dtype: object</code></pre>
 <section id="q4.-2" class="level4">
 <h4 class="anchored" data-anchor-id="q4.-2">Q4.</h4>
 <p><code>popasian</code>은 해당 지역의 아시아인 인구를 나타냅니다. ‘전체 인구 대비 아시아인 인구 백분율’ 변수를 추가하고 하위 10개의 지역의 <code>state</code>, <code>county</code>, 아시아인 인구 백분율을 출력하라.</p>
-<div id="4be7929c" class="cell" data-execution_count="23">
+<div id="fcaa97f6" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>midwest[<span class="st">'asian_ratio'</span>] <span class="op">=</span> midwest[<span class="st">'popasian'</span>] <span class="op">/</span> midwest[<span class="st">'poptotal'</span>] <span class="op">*</span> <span class="dv">100</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>midwest.sort_values(<span class="st">'asian_ratio'</span>) <span class="op">\</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>       [[<span class="st">'state'</span>, <span class="st">'county'</span>, <span class="st">'asian_ratio'</span>]] <span class="op">\</span></span>

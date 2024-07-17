@@ -2,7 +2,7 @@
 title: "EasyPython Practice Ch6"
 author: Ahyeong Jeong
 date: "2024-07-17"
-categories: [Practice]
+categories: [EasyPython]
 ---
 ## p.144
 #### Q1. 
