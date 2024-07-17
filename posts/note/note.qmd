@@ -2,7 +2,7 @@
 title: "LS Bigdata School note 1"
 author: Ahyeong Jeong
 date: "2024-07-17"
-categories: [bigdata]
+categories: [note]
 ---
 #### Python
 

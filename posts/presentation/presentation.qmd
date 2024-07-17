@@ -2,7 +2,7 @@
 title: "LS Bigdata School Presentation 1"
 author: Ahyeong Jeong
 date: "2024-07-17"
-categories: [bigdata]
+categories: [presentation]
 ---
 
 #### 필요한 패키지 불러오기
