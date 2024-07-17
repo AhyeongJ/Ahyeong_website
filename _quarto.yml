@@ -3,21 +3,23 @@ project:
   output-dir: docs
   
 website:
-  title: "아영의 웹사이트"
+  title: "Ahyeong website"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - href: about.qmd
-        text: about
+        text: About
       - href: blog.qmd
         text: Blog
-
+        
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
+
+
 
 
 
