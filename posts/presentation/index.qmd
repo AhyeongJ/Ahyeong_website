@@ -1,6 +1,8 @@
 ---
-title: "presentation1_traditional"
-jupyter: python3
+title: "LS Bigdata School Presentation 1"
+author: Ahyeong Jeong
+date: "2024-07-17"
+categories: [bigdata]
 ---
 
 #### 필요한 패키지 불러오기

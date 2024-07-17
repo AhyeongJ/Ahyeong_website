@@ -1,8 +1,9 @@
 ---
-title: "hw2"
-jupyter: python3
+title: "LS Bigdata School Homework 2"
+author: Ahyeong Jeong
+date: "2024-07-17"
+categories: [bigdata]
 ---
-
 ## p.144
 #### Q1. 자동차 배기량에 따라 고속도로 연비가 다른지 알아보자
 #### `displ`이 4이하인 자동차와 5 이상인 자동차 중 어떤 자동차의 `hwy` 평균이 더 높은지 알아보세요

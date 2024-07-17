@@ -1,11 +1,13 @@
 ---
-title: "hw1"
-jupyter: python3
+title: "LS Bigdata School Homework 1"
+author: Ahyeong Jeong
+date: "2024-07-17"
+categories: [bigdata]
 ---
 
 ## p.84 혼자서 해보기
 
-### Q1. 다음 표의 내용을 데이터 프레임으로 만들어 출력해보세요
+### Q1. 다음 표의 내용을 데이터 프레임으로 만들어 출력해보세요.
 
 ```{python}
 import pandas as pd
@@ -30,7 +32,7 @@ mpg = pd.read_csv("C:/Users/USER/Downloads/mpg.csv")
 mpg2 = mpg.copy()
 ```
 
-### Q2. 복사본 데이터를 이용해 `cty`는 `city`로, `hwy`는 `highway`로 수정하세요
+### Q2. 복사본 데이터를 이용해 `cty`는 `city`로, `hwy`는 `highway`로 수정하세요.
 
 ```{python}
 mpg2 = mpg2.rename(columns = {'cty' : 'city',

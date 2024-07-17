@@ -1,15 +1,9 @@
 ---
-title: "note"
-jupyter: python3
+title: "LS Bigdata School note 1"
+author: Ahyeong Jeong
+date: "2024-07-17"
+categories: [bigdata]
 ---
-
----
-title: "2일차 강의 노트"
-jupyter: python3
-editor_options: 
-  chunk_output_type: inline
----
-
 #### Python
 
 -   `Ctrl + Enter`
