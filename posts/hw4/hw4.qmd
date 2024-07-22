@@ -4,6 +4,7 @@ author: Ahyeong Jeong
 date: "2024-07-22"
 categories: [EasyPython]
 ---
+# Ch8 문제 풀이 
 
 필요한 패키지 불러오기 
 ```{python}
@@ -46,7 +47,66 @@ plt.show()
 
 ```{python}
 mpg.head()
-suv = df.query(")
+# 차종이 suv인 데이터 프레임 만들기 
+suv = mpg.query("category == 'suv'")
+# 회사 별 cty 연비 구하기 
+df1 = suv.groupby('manufacturer', as_index = False) \
+        .agg(cty_mean = ('cty', 'mean')) \
+        .sort_values('cty_mean', ascending = False) \
+        .head()
+        
+#막대그래프
+plt.clf()
+sns.barplot(data = df1, x = 'manufacturer', y = 'cty_mean', hue = 'manufacturer')
+plt.show()
+```
+
+## Q2. 
+자동차 중에 어떤 `category`가 많은지 알아보려고 합니다. `sns.barplot()`을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요. 
+```{python}
+df2 = mpg.groupby('category', as_index = False) \
+         .agg(category_n = ('category', 'count')) \
+         .sort_values('category_n')
+df2
+plt.clf()
+sns.barplot(data = df2, x = 'category', y = 'category_n', hue = 'category')
+plt.show()
+```
+
+## p.217
+`economics` 데이터를 이용해 분석 문제를 해결해보세요
+#### Q1. 
+`psavert`가 시간에 따라 어떻게 변해 왔는지 알아보려고 합니다. 연도별 개인 저축률의 변화를 나타낸 시계열 그래프를 만들어 보세요. 
+```{python}
+economics = pd.read_csv('C:/Users/USER/Documents/LS 빅데이터 스쿨/myportfolio/data/economics.csv')
+economics['date2'] = pd.to_datetime(economics['date'])
+economics['year'] = economics['date2'].dt.year
+economics.head()
+plt.clf()
+sns.lineplot(data = economics, x = 'year', y = 'psavert', errorbar = None)
+plt.show()
+```
+
+#### Q2.
+2014년 월별 `psavert`의 변화를 나타낸 시계열 그래프 만들어 보세요.
+```{python}
+economics['month'] = economics['date2'].dt.month
+year_2014 = economics.query('year == 2014')
+plt.clf()
+sns.lineplot(data = year_2014, x = 'month', y = 'psavert')
+plt.show()
+```
+
+## p.220
+`mpg` 데이터를 이용해 분석 문제를 해결해 보세요.
+
+#### Q1.
+`category`가 `compact`, `subcompact`, `suv`인 자동차의 `cty`가 어떻게 다른지 비교해 보려고 합니다. 세 차종의 `cty`를 나타낸 상자 그림을 만들어 보세요. 
+```{python}
+mpg1 = mpg.query("category in ['compact', 'subcompact', 'suv']")
+plt.clf()
+sns.boxplot(data = mpg1, x = 'category', y = 'cty', hue = 'category')
+plt.show()
 ```
 
 

@@ -221,7 +221,7 @@
     "href": "blog.html",
     "title": "myblog",
     "section": "",
-    "text": "EasyPython Practice Ch7. Plotly를 이용한 인터렉티브 그래프\n\n\n\n\n\n\nEasyPython\n\n\n\n\n\n\n\n\n\nJul 17, 2024\n\n\nAhyeong Jeong\n\n\n\n\n\n\n\n\n\n\n\n\nEasyPython Practice Ch4&5\n\n\n\n\n\n\nEasyPython\n\n\n\n\n\n\n\n\n\nJul 17, 2024\n\n\nAhyeong Jeong\n\n\n\n\n\n\n\n\n\n\n\n\nEasyPython Practice Ch6\n\n\n\n\n\n\nEasyPython\n\n\n\n\n\n\n\n\n\nJul 17, 2024\n\n\nAhyeong Jeong\n\n\n\n\n\n\n\n\n\n\n\n\nEasyPython Practice Ch7\n\n\n\n\n\n\nEasyPython\n\n\n\n\n\n\n\n\n\nJul 17, 2024\n\n\nAhyeong Jeong\n\n\n\n\n\n\n\n\n\n\n\n\nLS Bigdata School note 1\n\n\n\n\n\n\nnote\n\n\n\n\n\n\n\n\n\nJul 17, 2024\n\n\nAhyeong Jeong\n\n\n\n\n\n\n\n\n\n\n\n\nLS Bigdata School Presentation 1\n\n\n\n\n\n\npresentation\n\n\n\n\n\n\n\n\n\nJul 17, 2024\n\n\nAhyeong Jeong\n\n\n\n\n\n\nNo matching items"
+    "text": "Plotly를 이용한 인터렉티브 그래프\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEasyPython Practice Ch8\n\n\n\n\n\n\nEasyPython\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\nAhyeong Jeong\n\n\n\n\n\n\n\n\n\n\n\n\nEasyPython Practice Ch4&5\n\n\n\n\n\n\nEasyPython\n\n\n\n\n\n\n\n\n\nJul 17, 2024\n\n\nAhyeong Jeong\n\n\n\n\n\n\n\n\n\n\n\n\nEasyPython Practice Ch6\n\n\n\n\n\n\nEasyPython\n\n\n\n\n\n\n\n\n\nJul 17, 2024\n\n\nAhyeong Jeong\n\n\n\n\n\n\n\n\n\n\n\n\nEasyPython Practice Ch7\n\n\n\n\n\n\nEasyPython\n\n\n\n\n\n\n\n\n\nJul 17, 2024\n\n\nAhyeong Jeong\n\n\n\n\n\n\n\n\n\n\n\n\nLS Bigdata School note 1\n\n\n\n\n\n\nnote\n\n\n\n\n\n\n\n\n\nJul 17, 2024\n\n\nAhyeong Jeong\n\n\n\n\n\n\n\n\n\n\n\n\nLS Bigdata School Presentation 1\n\n\n\n\n\n\npresentation\n\n\n\n\n\n\n\n\n\nJul 17, 2024\n\n\nAhyeong Jeong\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/hw2/index.html",
@@ -418,5 +418,47 @@
     "title": "Ahyeong website",
     "section": "",
     "text": "title: “EasyPython Practice Ch8” author: Ahyeong Jeong date: “2024-07-22” categories: [EasyPython]\n##p.\n필요한 패키지 불러오기\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nimport plotly.express as px\n\n데이터 불러오기\n\nmpg = pd.read_csv('C:/Users/USER/Documents/LS 빅데이터 스쿨/myportfolio/data/mpg.csv')\n\n집단별 평균표 만들기\n\ndf_mpg = mpg.groupby('drv', as_index = False) \\\n            .agg(n = ('drv', 'count'))\ndf_mpg\n\n\n\n\n\n\n\n\ndrv\nn\n\n\n\n\n0\n4\n103\n\n\n1\nf\n106\n\n\n2\nr\n25\n\n\n\n\n\n\n\n막대 그래프 만들기: barplot\n\nsns.barplot(data = df_mpg, x = \"drv\", y = \"n\", hue = 'drv')\nplt.show()\n\n\n\n\n\n\n\n\n막대 그래프 만들기: countplot\n\nplt.clf()\nsns.countplot(data = mpg, x = 'drv', hue = 'drv')\nplt.show()"
+  },
+  {
+    "objectID": "posts/hw4/hw4.html",
+    "href": "posts/hw4/hw4.html",
+    "title": "EasyPython Practice Ch8",
+    "section": "",
+    "text": "필요한 패키지 불러오기\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nimport plotly.express as px\n데이터 불러오기\nmpg = pd.read_csv('C:/Users/USER/Documents/LS 빅데이터 스쿨/myportfolio/data/mpg.csv')"
+  },
+  {
+    "objectID": "posts/hw4/hw4.html#p.204",
+    "href": "posts/hw4/hw4.html#p.204",
+    "title": "EasyPython Practice Ch8",
+    "section": "p.204",
+    "text": "p.204\nmpg데이터와 midwest 데이터를 이용해 분석문제를 해결해 보세요.\n\nQ1. mpg 데이터의 cty와 hwy간에 어떤 관계가 있는지 알아보려고 합니다.\nx축은 cty, y축은hwy`로 된 산점도를 만들어 보세요\n\nsns.scatterplot(data = mpg, x = 'cty', y = 'hwy')\nplt.show()\n\n\n\n\n\n\n\n\n\n\nQ2.\n미국의 지역별 인구통계 정보를 담은 midwest.csv를 이용해 전체 인구와 아시아인 인구 간에 어떤 관계가 있는지 알아보려고 합니다. x축은 poptotal(전체인구), y축은 popasian(아시아인 인구)으로 된 산점도를 만들어보세요. 전체 인구는 50만 명 이하, 아시아인 인구는 1만 명 이하인 지역만 산점도에 표시되게 설정하세요.\n\nmidwest = pd.read_csv('C:/Users/USER/Documents/LS 빅데이터 스쿨/Doit_Python/data/midwest.csv')\nplt.clf()\nsns.scatterplot(data = midwest, x = 'poptotal', y = 'popasian')\\\n   .set(xlim = [0, 500000], ylim = [0, 10000])\nplt.show()"
+  },
+  {
+    "objectID": "posts/hw4/hw4.html#p.211",
+    "href": "posts/hw4/hw4.html#p.211",
+    "title": "EasyPython Practice Ch8",
+    "section": "p.211",
+    "text": "p.211\nmpg데이터를 이용해 분석 문제를 해결해보세요 #### Q1. 어떤 회사에서 생산한 suv 차종의 도시 연비가 높은지 알아보려고 합니다. suv차종을 대상으로 cty(도시 연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.\n\nmpg.head()\n# 차종이 suv인 데이터 프레임 만들기 \nsuv = mpg.query(\"category == 'suv'\")\n# 회사 별 cty 연비 구하기 \ndf1 = suv.groupby('manufacturer', as_index = False) \\\n        .agg(cty_mean = ('cty', 'mean')) \\\n        .sort_values('cty_mean', ascending = False) \\\n        .head()\n        \n#막대그래프\nplt.clf()\nsns.barplot(data = df1, x = 'manufacturer', y = 'cty_mean', hue = 'manufacturer')\nplt.show()"
+  },
+  {
+    "objectID": "posts/hw4/hw4.html#q2.-1",
+    "href": "posts/hw4/hw4.html#q2.-1",
+    "title": "EasyPython Practice Ch8",
+    "section": "Q2.",
+    "text": "Q2.\n자동차 중에 어떤 category가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.\n\ndf2 = mpg.groupby('category', as_index = False) \\\n         .agg(category_n = ('category', 'count')) \\\n         .sort_values('category_n')\ndf2\nplt.clf()\nsns.barplot(data = df2, x = 'category', y = 'category_n', hue = 'category')\nplt.show()"
+  },
+  {
+    "objectID": "posts/hw4/hw4.html#p.217",
+    "href": "posts/hw4/hw4.html#p.217",
+    "title": "EasyPython Practice Ch8",
+    "section": "p.217",
+    "text": "p.217\neconomics 데이터를 이용해 분석 문제를 해결해보세요 #### Q1. psavert가 시간에 따라 어떻게 변해 왔는지 알아보려고 합니다. 연도별 개인 저축률의 변화를 나타낸 시계열 그래프를 만들어 보세요.\n\neconomics = pd.read_csv('C:/Users/USER/Documents/LS 빅데이터 스쿨/myportfolio/data/economics.csv')\neconomics['date2'] = pd.to_datetime(economics['date'])\neconomics['year'] = economics['date2'].dt.year\neconomics.head()\nplt.clf()\nsns.lineplot(data = economics, x = 'year', y = 'psavert', errorbar = None)\nplt.show()\n\n\n\n\n\n\n\n\n\nQ2.\n2014년 월별 psavert의 변화를 나타낸 시계열 그래프 만들어 보세요.\n\neconomics['month'] = economics['date2'].dt.month\nyear_2014 = economics.query('year == 2014')\nplt.clf()\nsns.lineplot(data = year_2014, x = 'month', y = 'psavert')\nplt.show()"
+  },
+  {
+    "objectID": "posts/hw4/hw4.html#p.220",
+    "href": "posts/hw4/hw4.html#p.220",
+    "title": "EasyPython Practice Ch8",
+    "section": "p.220",
+    "text": "p.220\nmpg 데이터를 이용해 분석 문제를 해결해 보세요.\n\nQ1.\ncategory가 compact, subcompact, suv인 자동차의 cty가 어떻게 다른지 비교해 보려고 합니다. 세 차종의 cty를 나타낸 상자 그림을 만들어 보세요.\n\nmpg1 = mpg.query(\"category in ['compact', 'subcompact', 'suv']\")\nplt.clf()\nsns.boxplot(data = mpg1, x = 'category', y = 'cty', hue = 'category')\nplt.show()"
   }
 ]

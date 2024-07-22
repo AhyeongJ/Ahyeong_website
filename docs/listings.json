@@ -2,8 +2,8 @@
   {
     "listing": "/blog.html",
     "items": [
-      "/posts/hw4.qmd/hw4.html",
       "/posts/easypython_ch12/easypython_ch12.html",
+      "/posts/hw4/hw4.html",
       "/posts/hw1/hw1.html",
       "/posts/hw2/hw2.html",
       "/posts/hw3/hw3.html",
