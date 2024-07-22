@@ -1,0 +1,16 @@
+{
+  "hash": "f8a774a2b30411a6c6afd7f6baf6349b",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "title: \"EasyPython Practice Ch8\"\nauthor: Ahyeong Jeong\ndate: \"2024-07-22\"\ncategories: [EasyPython]\n\n\n##p.\n\n필요한 패키지 불러오기 \n\n::: {#a56eafeb .cell execution_count=1}\n``` {.python .cell-code}\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nimport plotly.express as px\n```\n:::\n\n\n데이터 불러오기 \n\n::: {#16a7e17b .cell execution_count=2}\n``` {.python .cell-code}\nmpg = pd.read_csv('C:/Users/USER/Documents/LS 빅데이터 스쿨/myportfolio/data/mpg.csv')\n```\n:::\n\n\n집단별 평균표 만들기\n\n::: {#c6453ff8 .cell execution_count=3}\n``` {.python .cell-code}\ndf_mpg = mpg.groupby('drv', as_index = False) \\\n            .agg(n = ('drv', 'count'))\ndf_mpg\n```\n\n::: {.cell-output .cell-output-display execution_count=3}\n```{=html}\n<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>drv</th>\n      <th>n</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>4</td>\n      <td>103</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>f</td>\n      <td>106</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>r</td>\n      <td>25</td>\n    </tr>\n  </tbody>\n</table>\n</div>\n```\n:::\n:::\n\n\n막대 그래프 만들기: barplot\n\n::: {#1cd9bec6 .cell execution_count=4}\n``` {.python .cell-code}\nsns.barplot(data = df_mpg, x = \"drv\", y = \"n\", hue = 'drv')\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![](hw4_files/figure-html/cell-5-output-1.png){width=593 height=429}\n:::\n:::\n\n\n막대 그래프 만들기: countplot\n\n::: {#2f4cb60d .cell execution_count=5}\n``` {.python .cell-code}\nplt.clf()\nsns.countplot(data = mpg, x = 'drv', hue = 'drv')\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![](hw4_files/figure-html/cell-6-output-1.png){width=593 height=429}\n:::\n:::\n\n\n",
+    "supporting": [
+      "hw4_files"
+    ],
+    "filters": [],
+    "includes": {
+      "include-in-header": [
+        "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js\" integrity=\"sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==\" crossorigin=\"anonymous\"></script>\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js\" integrity=\"sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==\" crossorigin=\"anonymous\" data-relocate-top=\"true\"></script>\n<script type=\"application/javascript\">define('jquery', [],function() {return window.jQuery;})</script>\n"
+      ]
+    }
+  }
+}
