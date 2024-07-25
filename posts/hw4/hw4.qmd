@@ -4,6 +4,7 @@ author: Ahyeong Jeong
 date: "2024-07-22"
 categories: [EasyPython]
 ---
+
 # Ch8 문제 풀이 
 
 필요한 패키지 불러오기 

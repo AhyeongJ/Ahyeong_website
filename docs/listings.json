@@ -2,8 +2,11 @@
   {
     "listing": "/blog.html",
     "items": [
-      "/posts/easypython_ch12/easypython_ch12.html",
+      "/posts/house_price/house_price.html",
+      "/posts/hw5/hw5.html",
+      "/posts/EasyPython_Ch11_note/EasyPython_Ch11_note.html",
       "/posts/hw4/hw4.html",
+      "/posts/easypython_ch12/easypython_ch12.html",
       "/posts/hw1/hw1.html",
       "/posts/hw2/hw2.html",
       "/posts/hw3/hw3.html",

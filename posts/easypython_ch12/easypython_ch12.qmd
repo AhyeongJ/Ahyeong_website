@@ -1,6 +1,9 @@
-------------------------------------------------------------------------
-
-title: "EasyPython Practice Ch7. Plotly를 이용한 인터렉티브 그래프" author: Ahyeong Jeong date: "2024-07-17" categories: \[EasyPython\]
+---
+title: "EasyPython Practice Ch7. Plotly를 이용한 인터렉티브 그래프" 
+author: Ahyeong Jeong 
+date: "2024-07-17" 
+categories: [EasyPython]
+---
 
 ## Plotly를 이용한 인터렉티브 그래프
 

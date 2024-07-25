@@ -1,0 +1,12 @@
+{
+  "hash": "a1165de8fc54d78cfe94e5e0dbab5ad5",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"EasyPython Ch11. 지도시각화\"\nauthor: Ahyeong Jeong\ndate: \"2024-07-22\"\ncategories: [EasyPython]\n---\n\n# Ch 11. 지도 시각화\n\n## 시군구별 인도 단계 구분도 만들기\n#### 1. 시군구 경계 지도 데이터 준비하기\n단계 구분도를 만들려면 지역별 위도, 경도 좌표가 있는 지도 데이터가 팔요함.\n대한민국의 시군구별 경계 좌표가 들어 있는 `SIG.geojson` 파일을 불러오겠다.\n`SIG.geojson`은 행정 구역 코드, 지역 이름, 시군구 경계 위도와 경도 좌표를 담고 있는 GeoJSON 파일. \n`json` 패키지의 `json.load()`를 이용하면 GeoJSON 파일을 불러올 수 있다. \n\n::: {#5f9aded9 .cell execution_count=1}\n``` {.python .cell-code}\nimport json\ngeo = json.load(open('C:/Users/USER/Documents/LS 빅데이터 스쿨/myportfolio/data/SIG.geojson', encoding = 'UTF-8'))\n```\n:::\n\n\n* `geo`는 딕셔너리 자료 구조로 되어 있다.\n* `properties`의 `SIG_CD`: 행정구역코드(지역)\n* `properties`의 `geometry`: 시군구의 경계를 나타난 위도, 경도 좌표 \n\n::: {#10c22e36 .cell execution_count=2}\n``` {.python .cell-code}\n# 행정 구역 코드 추력\ngeo['features'][0]['properties']\n```\n\n::: {.cell-output .cell-output-display execution_count=2}\n```\n{'SIG_CD': '42110', 'SIG_ENG_NM': 'Chuncheon-si', 'SIG_KOR_NM': '춘천시'}\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "EasyPython_Ch11_note_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
