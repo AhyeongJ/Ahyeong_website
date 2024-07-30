@@ -203,7 +203,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="convinience-level-visualization-practice" class="level1">
 <h1>Convinience Level Visualization Practice</h1>
 <p><strong>필요한 패키지 불러오기</strong></p>
-<div id="20584c8a" class="cell" data-execution_count="1">
+<div id="b9b5b00a" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -211,11 +211,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>데이터 불러오기</strong></p>
-<div id="013b51eb" class="cell" data-execution_count="2">
+<div id="9ca0b96e" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install pyreadstat</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>welfare <span class="op">=</span> pd.read_spss(<span class="st">"C:/Users/USER/Documents/LS 빅데이터 스쿨/myportfolio/data/Koweps_hpwc14_2019_beta2.sav"</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>welfare.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="28">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
@@ -375,7 +375,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><strong>필요한 컬럼들 이름 바꾸기</strong></p>
-<div id="ee520eac" class="cell" data-execution_count="3">
+<div id="7d7568d5" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>welfare <span class="op">=</span> welfare.rename(</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    columns <span class="op">=</span> {<span class="st">'h14_g3'</span>     : <span class="st">'sex'</span>,           <span class="co"># 성별</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>               <span class="st">'h14_g4'</span>     : <span class="st">'birth'</span>,         <span class="co"># 태어난 년도</span></span>
@@ -387,7 +387,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>welfare<span class="op">=</span> welfare[[<span class="st">'sex'</span>, <span class="st">'birth'</span>, <span class="st">'marriage_type'</span>, <span class="st">'religion'</span>, <span class="st">'income'</span>, <span class="st">'code_job'</span>, <span class="st">'code_region'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong><code>sex</code> 컬럼 검토 및 <code>male</code>, <code>female</code>로 변경</strong></p>
-<div id="b5f78940" class="cell" data-execution_count="4">
+<div id="d3ab759f" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 원래 성별 변수</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>welfare[<span class="st">'sex'</span>].dtypes</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>welfare[<span class="st">'sex'</span>].value_counts() </span>
@@ -396,7 +396,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># male과 female로 변경</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>welfare[<span class="st">'sex'</span>] <span class="op">=</span> np.where(welfare[<span class="st">'sex'</span>] <span class="op">==</span> <span class="dv">1</span>, <span class="st">'male'</span>, <span class="st">'female'</span>)</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>welfare[<span class="st">'sex'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="30">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>sex
 female    7913
 male      6505
@@ -404,12 +404,12 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p><strong>성별에 따른 월급 알아보기</strong></p>
-<div id="8b76868d" class="cell" data-execution_count="5">
+<div id="f7597518" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sex_income <span class="op">=</span> welfare.dropna(subset <span class="op">=</span> <span class="st">'income'</span>) <span class="op">\</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                         .groupby(<span class="st">'sex'</span>, as_index <span class="op">=</span> <span class="va">False</span>) <span class="op">\</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                         .agg(mean_income <span class="op">=</span> (<span class="st">'income'</span>, <span class="st">'mean'</span>))</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>sex_income</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="31">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 
 
@@ -439,7 +439,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p><strong>성별 월급 평균표</strong></p>
-<div id="18f8d948" class="cell" data-execution_count="6">
+<div id="2d073c36" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sns.barplot(data <span class="op">=</span> sex_income, x <span class="op">=</span> <span class="st">'sex'</span>, y <span class="op">=</span> <span class="st">'mean_income'</span>, hue <span class="op">=</span> <span class="st">"sex"</span>, palette <span class="op">=</span> <span class="st">"pastel"</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.clf()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -458,7 +458,7 @@ Name: count, dtype: int64</code></pre>
 <ol start="0" type="1">
 <li>성별에 따른 income 데이터프레임 생성</li>
 </ol>
-<div id="38bf181e" class="cell" data-execution_count="7">
+<div id="dd947574" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>f_income <span class="op">=</span> welfare.dropna(subset <span class="op">=</span> <span class="st">"income"</span>) <span class="op">\</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                  .query(<span class="st">"sex == 'female'"</span>)[<span class="st">'income'</span>]</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>m_income <span class="op">=</span> welfare.dropna(subset <span class="op">=</span> <span class="st">'income'</span>) <span class="op">\</span></span>
@@ -467,39 +467,39 @@ Name: count, dtype: int64</code></pre>
 <ol type="1">
 <li>성별 별 평균</li>
 </ol>
-<div id="e9bc1191" class="cell" data-execution_count="8">
+<div id="8bcc467f" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>f_bar <span class="op">=</span> np.mean(f_income)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>m_bar <span class="op">=</span> np.mean(m_income)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="1">
 <li>표본표준편차 사용해서 모표분편차 추정</li>
 </ol>
-<div id="9248be36" class="cell" data-execution_count="9">
+<div id="00342e11" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>f_std <span class="op">=</span> np.sqrt(np.var(f_income, ddof<span class="op">=</span><span class="dv">1</span>))</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>m_std <span class="op">=</span> np.sqrt(np.var(m_income, ddof<span class="op">=</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="3" type="1">
 <li>성별 별 표본 개수 구하기</li>
 </ol>
-<div id="9d5df061" class="cell" data-execution_count="10">
+<div id="34993e1f" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>f_n <span class="op">=</span> <span class="bu">len</span>(f_income)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>m_n <span class="op">=</span> <span class="bu">len</span>(m_income)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="4" type="1">
 <li>z</li>
 </ol>
-<div id="caa49bf7" class="cell" data-execution_count="11">
+<div id="c0f1a0ac" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>z_0025 <span class="op">=</span> norm.ppf(<span class="fl">0.95</span>, loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>성별 별로 신뢰구간 계산하기</strong></p>
-<div id="aa6343f0" class="cell" data-execution_count="12">
+<div id="74cdb77b" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>f_conf1 <span class="op">=</span> f_bar <span class="op">-</span> z_0025 <span class="op">*</span> f_std<span class="op">/</span>np.sqrt(f_n)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>f_conf2 <span class="op">=</span> f_bar <span class="op">+</span> z_0025 <span class="op">*</span> f_std<span class="op">/</span>np.sqrt(f_n)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>m_conf1 <span class="op">=</span> m_bar <span class="op">-</span> z_0025 <span class="op">*</span> m_std<span class="op">/</span>np.sqrt(m_n)</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>m_conf2 <span class="op">=</span> m_bar <span class="op">+</span> z_0025 <span class="op">*</span> m_std<span class="op">/</span>np.sqrt(m_n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>그래프에 나타내기</strong></p>
-<div id="741d9426" class="cell" data-execution_count="13">
+<div id="25906db5" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>sns.barplot(data <span class="op">=</span> sex_income, x <span class="op">=</span> <span class="st">'sex'</span>, y <span class="op">=</span> <span class="st">'mean_income'</span>, hue <span class="op">=</span> <span class="st">"sex"</span>, palette <span class="op">=</span> <span class="st">"pastel"</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>plt.vlines(x <span class="op">=</span> <span class="st">"female"</span>, ymin <span class="op">=</span> f_conf1, ymax <span class="op">=</span> f_conf2, colors <span class="op">=</span> <span class="st">"blue"</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>plt.vlines(x <span class="op">=</span> <span class="st">"male"</span>, ymin <span class="op">=</span> m_conf1, ymax <span class="op">=</span> m_conf2, colors <span class="op">=</span> <span class="st">"red"</span>)</span>
