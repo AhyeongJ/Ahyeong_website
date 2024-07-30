@@ -62,7 +62,7 @@ sex_income
 
 __성별 월급 평균표__
 ```{python}
-sns.barplot(data = sex_income, x = 'sex', y = 'mean_income', hue = "sex")
+sns.barplot(data = sex_income, x = 'sex', y = 'mean_income', hue = "sex", palette = "pastel")
 plt.show()
 plt.clf()
 ```
@@ -99,24 +99,24 @@ m_n = len(m_income)
 
 4. z
 ```{python}
-z_0025 = norm.ppf(0.975, loc=0, scale=1)
+z_0025 = norm.ppf(0.95, loc=0, scale=1)
 ```
 
 
 __성별 별로 신뢰구간 계산하기__
 ```{python}
-f_conv1 = f_bar - z_0025 * f_std/np.sqrt(f_n)
-f_conv2 = f_bar + z_0025 * f_std/np.sqrt(f_n)
-m_conv1 = m_bar - z_0025 * f_std/np.sqrt(m_n)
-m_conv2 = m_bar + z_0025 * f_std/np.sqrt(m_n)
+f_conf1 = f_bar - z_0025 * f_std/np.sqrt(f_n)
+f_conf2 = f_bar + z_0025 * f_std/np.sqrt(f_n)
+m_conf1 = m_bar - z_0025 * m_std/np.sqrt(m_n)
+m_conf2 = m_bar + z_0025 * m_std/np.sqrt(m_n)
 ```
 
 
 __그래프에 나타내기__
 ```{python}
-sns.barplot(data = sex_income, x = 'sex', y = 'mean_income', hue = "sex")
-plt.vlines(x = "female", ymin = f_conv1, ymax = f_conv2, colors = "black")
-plt.vlines(x = "male", ymin = m_conv1, ymax = m_conv2, colors = "black")
+sns.barplot(data = sex_income, x = 'sex', y = 'mean_income', hue = "sex", palette = "pastel")
+plt.vlines(x = "female", ymin = f_conf1, ymax = f_conf2, colors = "blue")
+plt.vlines(x = "male", ymin = m_conf1, ymax = m_conf2, colors = "red")
 plt.show()
 plt.clf()
 ```
