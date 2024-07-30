@@ -24,7 +24,7 @@ categories: [Statistics]
 ```{python}
 from scipy.stats import uniform
 import matplotlib.pyplot as plt
-x=uniform.rvs(loc=2, scale=4, size=20*10000)
+x=uniform.rvs(loc=3, scale=7, size=20*10000)
 x=x.reshape(-1, 20)
 x.shape
 s_2 = x.var(axis=1, ddof=1)
