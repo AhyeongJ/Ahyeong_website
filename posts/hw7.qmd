@@ -4,7 +4,7 @@ author: Ahyeong Jeong
 date: "2024-07-30"
 categories: [Statistics]
 ---
-# Convinience Level Practice
+# Convinience Level Visualization Practice
 
 __필요한 패키지 불러오기__
 
