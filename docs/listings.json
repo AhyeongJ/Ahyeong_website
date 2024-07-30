@@ -3,10 +3,12 @@
     "listing": "/blog.html",
     "items": [
       "/posts/house_price/house_price.html",
+      "/posts/hw7.html",
       "/posts/EasyPython_Ch8/EasyPython_Ch8.html",
       "/posts/EasyPython_Ch9/EasyPython_Ch9.html",
       "/posts/hw5/hw5.html",
       "/posts/hw6/hw6.html",
+      "/posts/ISLP/ISLP1/ISLP Ch2.html",
       "/posts/EasyPython_Ch11_note/EasyPython_Ch11_note.html",
       "/posts/hw4/hw4.html",
       "/posts/easypython_ch12/easypython_ch12.html",

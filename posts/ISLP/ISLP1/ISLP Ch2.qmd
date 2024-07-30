@@ -1,0 +1,90 @@
+---
+title: "ISLP Lab: Introduction to Python"
+author: Ahyeong Jeong
+date: "2024-07-25"
+categories: [ISLP]
+---
+## ISLP Lab: Introduction to Python
+
+#### Basic Commands
+__print()__
+```{python}
+print('fit a model with', 11, 'variables')
+```
+
+__list & concatenation__
+```{python}
+x = [3, 4, 5]  # list
+y = [4, 9, 7]
+x + y # concatenation 
+```
+
+#### Introduction to Numerical Python
+__np.array(): function to define one-dimensinal arrays (vectors)__
+```{python}
+import numpy as np
+x = np.array([3, 4, 5])
+y = np.array([4, 9, 7])
+x + y
+```
+
+__We can create a two-dimensional array as follows.__
+```{python}
+x = np.array([[1, 2], [3, 4]])
+x
+x.ndim
+x.dtype
+```
+
+
+__An array of floating point numbers__
+```{python}
+np.array([[1, 2], [3.0, 4]]).dtype
+np.array([[1, 2], [3, 4]], float).dtype
+x.shape
+```
+
+
+__A method is a function that is associated with an object.__
+__`x.sum()`: sums all of its elements.__
+__`np.sum()` function as well.__ 
+```{python}
+x = np.array([1, 2, 3, 4])
+x.sum()
+x = np.array([1, 2, 3, 4])
+np.sum(x)
+```
+
+
+__`reshape()` method: returns a new array with the same elements as x, but a different shape__
+```{python}
+x = np.array([1, 2, 3, 4, 5, 6])
+print('beginning x:\n', x)
+x_reshape = x.reshape((2, 3))
+print('reshaped x:\n', x_reshape)
+x_reshape[0, 0]  # indexing 1
+x_reshape[1, 2]  # indexing 2
+```
+
+__
+```{python}
+print('x before we modify x_reshape :\n', x)
+print('x_reshpae before we modify x_reshape:\n', x_reshape)
+x_reshape[0, 0] = 5
+print('x_reshape after we modify its top left element:\n', x_reshape)
+print('x after we modify top left element of x_reshape:\n', x)
+```
+
+(a)
+```{python}
+import pandas as pd 
+#college = pd.read_csv("College.csv")
+```
+
+(b)
+```{python}
+#college2 = pd.read_csv('College.csv', index_col = 0)
+#college3 = college.rename({'Unnamed: 0': 'College'},
+#                            axis = 1 )
+#college3 = college3.set_index('college')
+```
