@@ -69,6 +69,8 @@ plt.clf()
 
 
 __신뢰구간 계산 전 필요한 모수 구하기__
+
+
 0. 성별에 따른 income 데이터프레임 생성
 ```{python}
 f_income = welfare.dropna(subset = "income") \
