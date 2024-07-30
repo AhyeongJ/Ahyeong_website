@@ -30,16 +30,16 @@ import matplotlib.pyplot as plt
 **1. `s_2` 분포 그래프 그리기**
 
 ```{python}
-x=uniform.rvs(loc=3, scale=7, size=20*10000)
+x=uniform.rvs(loc=3, scale=4, size=20*10000)
 x=x.reshape(-1, 20)
 x.shape
-pop_var = uniform.var(loc=3, scale=7)
+pop_var = uniform.var(loc=3, scale=4)
 ```
 ```{python}
 s_2 = np.var(x, axis=1, ddof=1)
 sns.histplot(s_2, stat='density', color = "lightpink")
 plt.axvline(pop_var, color="red", linestyle = '--')
-plt.xlim([0, 8])
+plt.xlim([0, 2.5])
 plt.show()
 plt.clf()
 ```
@@ -52,7 +52,7 @@ plt.clf()
 k_2 = np.var(x, axis=1, ddof=0)
 sns.histplot(k_2, stat='density', color = "lightblue")
 plt.axvline(pop_var, color="red", linestyle = '--')
-plt.xlim([0, 8])
+plt.xlim([0, 2.5])
 plt.show()
 plt.clf()
 ```
