@@ -19,20 +19,28 @@ categories: [Statistics]
 -   각 분포 그래프에 모분산의 위치에 녹색 막대를 그리기
 -   결과를 살펴보고, 왜 **n-1**로 나눈 것을 분산을 추정하는 지표로 사용하는 것이 타당한 지 서술하기.
 
-**1. `s_2` 분포 그래프 그리기**
-
+**0. 필요한 패키지 가져오기**
 ```{python}
 from scipy.stats import uniform
 import matplotlib.pyplot as plt
+```
+
+**1. `s_2` 분포 그래프 그리기**
+
+```{python}
 x=uniform.rvs(loc=3, scale=7, size=20*10000)
 x=x.reshape(-1, 20)
 x.shape
+```
+```{python}
 s_2 = x.var(axis=1, ddof=1)
 plt.hist(s_2, color = "lightpink")
 plt.axvline(x.var(), color="green")
 plt.show()
 plt.clf()
 ```
+
+
 
 **2. `k_2` 분포 그래프 그리기**
 

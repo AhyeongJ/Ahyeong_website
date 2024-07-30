@@ -210,22 +210,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>각 분포 그래프에 모분산의 위치에 녹색 막대를 그리기</li>
 <li>결과를 살펴보고, 왜 <strong>n-1</strong>로 나눈 것을 분산을 추정하는 지표로 사용하는 것이 타당한 지 서술하기.</li>
 </ul>
-<p><strong>1. <code>s_2</code> 분포 그래프 그리기</strong></p>
-<div id="cf20f9b7" class="cell" data-execution_count="1">
+<p><strong>0. 필요한 패키지 가져오기</strong></p>
+<div id="dece5cee" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> uniform</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>uniform.rvs(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">7</span>, size<span class="op">=</span><span class="dv">20</span><span class="op">*</span><span class="dv">10000</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>x.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">20</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>x.shape</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>s_2 <span class="op">=</span> x.var(axis<span class="op">=</span><span class="dv">1</span>, ddof<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>plt.hist(s_2, color <span class="op">=</span> <span class="st">"lightpink"</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.axvline(x.var(), color<span class="op">=</span><span class="st">"green"</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>plt.clf()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>1. <code>s_2</code> 분포 그래프 그리기</strong></p>
+<div id="520fcc64" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>uniform.rvs(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">7</span>, size<span class="op">=</span><span class="dv">20</span><span class="op">*</span><span class="dv">10000</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>x.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">20</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>(10000, 20)</code></pre>
+</div>
+</div>
+<div id="4e69f682" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>s_2 <span class="op">=</span> x.var(axis<span class="op">=</span><span class="dv">1</span>, ddof<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>plt.hist(s_2, color <span class="op">=</span> <span class="st">"lightpink"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.axvline(x.var(), color<span class="op">=</span><span class="st">"green"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>plt.clf()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="hw6_files/figure-html/cell-2-output-1.png" width="587" height="411" class="figure-img"></p>
+<p><img src="hw6_files/figure-html/cell-4-output-1.png" width="583" height="411" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -234,16 +242,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><strong>2. <code>k_2</code> 분포 그래프 그리기</strong></p>
-<div id="01ba2aae" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>k_2 <span class="op">=</span> x.var(axis<span class="op">=</span><span class="dv">1</span>, ddof<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plt.hist(k_2, color <span class="op">=</span> <span class="st">"lightpink"</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.axvline(x.var(), color<span class="op">=</span><span class="st">"green"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.clf()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fd4b9dff" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>k_2 <span class="op">=</span> x.var(axis<span class="op">=</span><span class="dv">1</span>, ddof<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.hist(k_2, color <span class="op">=</span> <span class="st">"lightpink"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.axvline(x.var(), color<span class="op">=</span><span class="st">"green"</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>plt.clf()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="hw6_files/figure-html/cell-3-output-1.png" width="583" height="411" class="figure-img"></p>
+<p><img src="hw6_files/figure-html/cell-5-output-1.png" width="583" height="411" class="figure-img"></p>
 </figure>
 </div>
 </div>
