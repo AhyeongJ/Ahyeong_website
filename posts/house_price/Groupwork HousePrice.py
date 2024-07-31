@@ -36,15 +36,15 @@ sub_df.to_csv("posts/house_price/sample_submission3.csv", index = False)
 house_train = pd.read_csv("posts/house_price/train.csv")
 df = house_train.sort_values('SalePrice').head(10)
 
-house_train = house_train[["Id", "BldgType", "Neighborhood", "RoofStyle", "SalePrice"]]
+house_train = house_train[["Id", "TotRmsAbvGrd", "Neighborhood", "RoofStyle", "SalePrice"]]
 
 # 연도별 평균 
-house_mean = house_train.groupby(["BldgType", "Neighborhood", "RoofStyle"], as_index = False) \
+house_mean = house_train.groupby(["TotRmsAbvGrd", "Neighborhood", "RoofStyle"], as_index = False) \
                         .agg(mean = ('SalePrice', 'mean'))
 house_test = pd.read_csv("posts/house_price/test.csv")
-house_test = house_test[["Id", "BldgType", "Neighborhood", "RoofStyle"]]
+house_test = house_test[["Id", "TotRmsAbvGrd", "Neighborhood", "RoofStyle"]]
 
-house_test = pd.merge(house_test, house_mean, how ='left', on = ["BldgType", "Neighborhood", "RoofStyle"])
+house_test = pd.merge(house_test, house_mean, how ='left', on = ["TotRmsAbvGrd", "Neighborhood", "RoofStyle"])
 house_test = house_test.rename(columns = {'mean' : 'SalePrice'})
 
 house_test.isna().sum()  # na 값 세기 

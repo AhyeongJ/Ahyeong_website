@@ -59,7 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -102,6 +102,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
 
 
 <link rel="stylesheet" href="../../../styles.css">
@@ -183,7 +189,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#islp-lab-introduction-to-python" id="toc-islp-lab-introduction-to-python" class="nav-link active" data-scroll-target="#islp-lab-introduction-to-python">ISLP Lab: Introduction to Python</a></li>
+  <li><a href="#ch2.-introduction-to-python" id="toc-ch2.-introduction-to-python" class="nav-link active" data-scroll-target="#ch2.-introduction-to-python">CH2. Introduction to Python</a></li>
+  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
   </ul>
 </nav>
     </div>
@@ -194,123 +201,575 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="islp-lab-introduction-to-python" class="level2">
-<h2 class="anchored" data-anchor-id="islp-lab-introduction-to-python">ISLP Lab: Introduction to Python</h2>
-<section id="basic-commands" class="level4">
-<h4 class="anchored" data-anchor-id="basic-commands">Basic Commands</h4>
-<p><strong>print()</strong></p>
-<div id="2511e950" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'fit a model with'</span>, <span class="dv">11</span>, <span class="st">'variables'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="ch2.-introduction-to-python" class="level2">
+<h2 class="anchored" data-anchor-id="ch2.-introduction-to-python">CH2. Introduction to Python</h2>
+</section>
+<section id="practice" class="level2">
+<h2 class="anchored" data-anchor-id="practice">Practice</h2>
+<section id="section" class="level4">
+<h4 class="anchored" data-anchor-id="section">8.</h4>
+<p><strong>이 문제는 <code>College.csv</code> 파일에 있는 <code>College</code>자료에 관련된다.</strong> <strong>이것은 미국 내의 777개 대학에 대한 다수의 변수들을 포함한다.</strong></p>
+<p><strong>필요한 패키지 불러오기</strong></p>
+<div id="98bec4c6" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#!pip install ISLP</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="a" class="level4">
+<h4 class="anchored" data-anchor-id="a">8-(a)</h4>
+<p><strong>Call the loaded data college</strong></p>
+<div id="b8dfcb64" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>college <span class="op">=</span> pd.read_csv(<span class="st">"C:/Users/USER/Documents/LS 빅데이터 스쿨/myportfolio/posts/ISLP/data/College.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="b" class="level4">
+<h4 class="anchored" data-anchor-id="b">8-(b)</h4>
+<p><strong>The first column is just the name of each university in a column named something like <code>Unnamed: 0</code></strong><br>
+<strong>Following codes are used to give each row a name corresponding to the appropriate university</strong></p>
+<div id="760e7891" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Column names of college data :'</span>, college.columns)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>college2 <span class="op">=</span> pd.read_csv(<span class="st">"C:/Users/USER/Documents/LS 빅데이터 스쿨/myportfolio/posts/ISLP/data/College.csv"</span>, index_col <span class="op">=</span> <span class="dv">0</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>college3 <span class="op">=</span> college.rename({<span class="st">'Unnamed: 0'</span>: <span class="st">'College'</span>},</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                          axis <span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>college3 <span class="op">=</span> college3.set_index(<span class="st">'College'</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>college <span class="op">=</span> college3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>fit a model with 11 variables</code></pre>
-</div>
-</div>
-<p><strong>list &amp; concatenation</strong></p>
-<div id="f3fdbca5" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]  <span class="co"># list</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">7</span>]</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">+</span> y <span class="co"># concatenation </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>[3, 4, 5, 4, 9, 7]</code></pre>
+<pre><code>Column names of college data : Index(['Unnamed: 0', 'Private', 'Apps', 'Accept', 'Enroll', 'Top10perc',
+       'Top25perc', 'F.Undergrad', 'P.Undergrad', 'Outstate', 'Room.Board',
+       'Books', 'Personal', 'PhD', 'Terminal', 'S.F.Ratio', 'perc.alumni',
+       'Expend', 'Grad.Rate'],
+      dtype='object')</code></pre>
 </div>
 </div>
 </section>
-<section id="introduction-to-numerical-python" class="level4">
-<h4 class="anchored" data-anchor-id="introduction-to-numerical-python">Introduction to Numerical Python</h4>
-<p><strong>np.array(): function to define one-dimensinal arrays (vectors)</strong></p>
-<div id="df7bb7f7" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array([<span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">7</span>])</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">+</span> y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>array([ 7, 13, 12])</code></pre>
+<section id="c" class="level4">
+<h4 class="anchored" data-anchor-id="c">8-(c)</h4>
+<p><strong>Use the <code>describe()</code> method of to produce a numerical summary of the variables</strong></p>
+<div id="622de9fe" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>college.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="38">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Apps</th>
+<th data-quarto-table-cell-role="th">Accept</th>
+<th data-quarto-table-cell-role="th">Enroll</th>
+<th data-quarto-table-cell-role="th">Top10perc</th>
+<th data-quarto-table-cell-role="th">Top25perc</th>
+<th data-quarto-table-cell-role="th">F.Undergrad</th>
+<th data-quarto-table-cell-role="th">P.Undergrad</th>
+<th data-quarto-table-cell-role="th">Outstate</th>
+<th data-quarto-table-cell-role="th">Room.Board</th>
+<th data-quarto-table-cell-role="th">Books</th>
+<th data-quarto-table-cell-role="th">Personal</th>
+<th data-quarto-table-cell-role="th">PhD</th>
+<th data-quarto-table-cell-role="th">Terminal</th>
+<th data-quarto-table-cell-role="th">S.F.Ratio</th>
+<th data-quarto-table-cell-role="th">perc.alumni</th>
+<th data-quarto-table-cell-role="th">Expend</th>
+<th data-quarto-table-cell-role="th">Grad.Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">count</td>
+<td>777.000000</td>
+<td>777.000000</td>
+<td>777.000000</td>
+<td>777.000000</td>
+<td>777.000000</td>
+<td>777.000000</td>
+<td>777.000000</td>
+<td>777.000000</td>
+<td>777.000000</td>
+<td>777.000000</td>
+<td>777.000000</td>
+<td>777.000000</td>
+<td>777.000000</td>
+<td>777.000000</td>
+<td>777.000000</td>
+<td>777.000000</td>
+<td>777.00000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">mean</td>
+<td>3001.638353</td>
+<td>2018.804376</td>
+<td>779.972973</td>
+<td>27.558559</td>
+<td>55.796654</td>
+<td>3699.907336</td>
+<td>855.298584</td>
+<td>10440.669241</td>
+<td>4357.526384</td>
+<td>549.380952</td>
+<td>1340.642214</td>
+<td>72.660232</td>
+<td>79.702703</td>
+<td>14.089704</td>
+<td>22.743887</td>
+<td>9660.171171</td>
+<td>65.46332</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">std</td>
+<td>3870.201484</td>
+<td>2451.113971</td>
+<td>929.176190</td>
+<td>17.640364</td>
+<td>19.804778</td>
+<td>4850.420531</td>
+<td>1522.431887</td>
+<td>4023.016484</td>
+<td>1096.696416</td>
+<td>165.105360</td>
+<td>677.071454</td>
+<td>16.328155</td>
+<td>14.722359</td>
+<td>3.958349</td>
+<td>12.391801</td>
+<td>5221.768440</td>
+<td>17.17771</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">min</td>
+<td>81.000000</td>
+<td>72.000000</td>
+<td>35.000000</td>
+<td>1.000000</td>
+<td>9.000000</td>
+<td>139.000000</td>
+<td>1.000000</td>
+<td>2340.000000</td>
+<td>1780.000000</td>
+<td>96.000000</td>
+<td>250.000000</td>
+<td>8.000000</td>
+<td>24.000000</td>
+<td>2.500000</td>
+<td>0.000000</td>
+<td>3186.000000</td>
+<td>10.00000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">25%</td>
+<td>776.000000</td>
+<td>604.000000</td>
+<td>242.000000</td>
+<td>15.000000</td>
+<td>41.000000</td>
+<td>992.000000</td>
+<td>95.000000</td>
+<td>7320.000000</td>
+<td>3597.000000</td>
+<td>470.000000</td>
+<td>850.000000</td>
+<td>62.000000</td>
+<td>71.000000</td>
+<td>11.500000</td>
+<td>13.000000</td>
+<td>6751.000000</td>
+<td>53.00000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">50%</td>
+<td>1558.000000</td>
+<td>1110.000000</td>
+<td>434.000000</td>
+<td>23.000000</td>
+<td>54.000000</td>
+<td>1707.000000</td>
+<td>353.000000</td>
+<td>9990.000000</td>
+<td>4200.000000</td>
+<td>500.000000</td>
+<td>1200.000000</td>
+<td>75.000000</td>
+<td>82.000000</td>
+<td>13.600000</td>
+<td>21.000000</td>
+<td>8377.000000</td>
+<td>65.00000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">75%</td>
+<td>3624.000000</td>
+<td>2424.000000</td>
+<td>902.000000</td>
+<td>35.000000</td>
+<td>69.000000</td>
+<td>4005.000000</td>
+<td>967.000000</td>
+<td>12925.000000</td>
+<td>5050.000000</td>
+<td>600.000000</td>
+<td>1700.000000</td>
+<td>85.000000</td>
+<td>92.000000</td>
+<td>16.500000</td>
+<td>31.000000</td>
+<td>10830.000000</td>
+<td>78.00000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">max</td>
+<td>48094.000000</td>
+<td>26330.000000</td>
+<td>6392.000000</td>
+<td>96.000000</td>
+<td>100.000000</td>
+<td>31643.000000</td>
+<td>21836.000000</td>
+<td>21700.000000</td>
+<td>8124.000000</td>
+<td>2340.000000</td>
+<td>6800.000000</td>
+<td>103.000000</td>
+<td>100.000000</td>
+<td>39.800000</td>
+<td>64.000000</td>
+<td>56233.000000</td>
+<td>118.00000</td>
+</tr>
+</tbody>
+</table>
+
 </div>
 </div>
-<p><strong>We can create a two-dimensional array as follows.</strong></p>
-<div id="c2649905" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>x.ndim</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>x.dtype</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>dtype('int64')</code></pre>
+</div>
+</section>
+<section id="d" class="level4">
+<h4 class="anchored" data-anchor-id="d">8-(d)</h4>
+<p><strong>Use the <code>pd.plotting.scatter_matrix()</code> function to produce a scatterplot matrix of the first columns <code>[Top10perc, Apps, Enroll]</code>.</strong> <strong>Recall that you can reference a list C of columns of a data frame A using A[C].</strong></p>
+<div id="90f983ac" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pd.plotting.scatter_matrix(college[[<span class="st">'Top10perc'</span>, <span class="st">'Apps'</span>, <span class="st">'Enroll'</span>]])</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.clf()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ISLP Ch2_files/figure-html/cell-6-output-1.png" width="601" height="450" class="figure-img"></p>
+</figure>
 </div>
 </div>
-<p><strong>An array of floating point numbers</strong></p>
-<div id="64269000" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="fl">3.0</span>, <span class="dv">4</span>]]).dtype</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]], <span class="bu">float</span>).dtype</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>x.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>(2, 2)</code></pre>
+<div class="cell-output cell-output-display">
+<pre><code>&lt;Figure size 672x480 with 0 Axes&gt;</code></pre>
 </div>
 </div>
-<p><strong>A method is a function that is associated with an object.</strong> <strong><code>x.sum()</code>: sums all of its elements.</strong> <strong><code>np.sum()</code> function as well.</strong></p>
-<div id="34ef3bb9" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>x.<span class="bu">sum</span>()</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">sum</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>np.int64(10)</code></pre>
+<ul>
+<li><code>pd.plotting.scatter_matrix()</code> : to create a scatterplot matrix to visualize all of the pairwise relationships between the columns in a data frame</li>
+</ul>
+</section>
+<section id="e" class="level4">
+<h4 class="anchored" data-anchor-id="e">8 - (e)</h4>
+<p><strong>Use the <code>boxplot()</code> method of <code>college</code> to produce side-by=side boxplots of <code>Outstate</code> versus <code>Private</code></strong></p>
+<div id="6082d380" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>college[<span class="st">'Outstate'</span>].dtype</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>college[<span class="st">'Private'</span>].value_counts()</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data <span class="op">=</span> college, x <span class="op">=</span> <span class="st">'Private'</span>, y <span class="op">=</span> <span class="st">'Outstate'</span>, hue <span class="op">=</span> <span class="st">'Private'</span>, palette <span class="op">=</span> <span class="st">"pink"</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>plt.clf()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ISLP Ch2_files/figure-html/cell-7-output-1.png" width="610" height="432" class="figure-img"></p>
+</figure>
 </div>
 </div>
-<p><strong><code>reshape()</code> method: returns a new array with the same elements as x, but a different shape</strong></p>
-<div id="049cfa72" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'beginning x:</span><span class="ch">\n</span><span class="st">'</span>, x)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>x_reshape <span class="op">=</span> x.reshape((<span class="dv">2</span>, <span class="dv">3</span>))</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'reshaped x:</span><span class="ch">\n</span><span class="st">'</span>, x_reshape)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>x_reshape[<span class="dv">0</span>, <span class="dv">0</span>]  <span class="co"># indexing 1</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>x_reshape[<span class="dv">1</span>, <span class="dv">2</span>]  <span class="co"># indexing 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>&lt;Figure size 672x480 with 0 Axes&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="f" class="level4">
+<h4 class="anchored" data-anchor-id="f">8 - (f)</h4>
+<p><strong>Create a new qualitative variable, called <code>Elite</code>, by binning the <code>Top10perc</code> variable into two groups</strong> <strong>Based on the proportion of students coming from the top 10% of their high school classes exceeds 50%.</strong></p>
+<div id="35c96fba" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>college[<span class="st">'Elite'</span>] <span class="op">=</span> pd.cut(college[<span class="st">'Top10perc'</span>],</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>                          [<span class="dv">0</span>, <span class="dv">50</span>, <span class="dv">100</span>],</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                          labels<span class="op">=</span>[<span class="st">'No'</span>, <span class="st">'Yes'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Use the <code>value_counts()</code> method of <code>college['Elite']</code> to see how many elite universities there are</strong></p>
+<div id="eb1b48b6" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>college[<span class="st">'Elite'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="42">
+<pre><code>Elite
+No     699
+Yes     78
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<p><strong>Finally, use the <code>boxplot()</code> method again to produce side-by-side boxplots of <code>Outstate</code> versus <code>Elite</code>.</strong></p>
+<div id="a874f99f" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data <span class="op">=</span> college, x <span class="op">=</span> <span class="st">"Elite"</span>, y <span class="op">=</span> <span class="st">"Outstate"</span>, hue <span class="op">=</span> <span class="st">"Elite"</span>, palette <span class="op">=</span> <span class="st">"pink"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>plt.clf()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ISLP Ch2_files/figure-html/cell-10-output-1.png" width="610" height="432" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>&lt;Figure size 672x480 with 0 Axes&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="g" class="level4">
+<h4 class="anchored" data-anchor-id="g">8 - (g)</h4>
+<p><strong>Use the <code>plot.hist()</code> method of <code>college</code> to produce some histograms with differing numbers of bins for a few of the quantitative variables</strong> <strong>The command plt.subplots(2, 2) may be useful: it will divide the plot window into four regions so that four plots can be made simultaneously. By changing the arguments you can divide the screen up in other combinations.</strong></p>
+<div id="d68bf134" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>college[<span class="st">'Expend'</span>].describe()</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure()</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">221</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>sns.histplot(data <span class="op">=</span> college, x <span class="op">=</span> <span class="st">"Expend"</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">222</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>sns.histplot(data <span class="op">=</span> college, x <span class="op">=</span> <span class="st">"Personal"</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">223</span>)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>sns.histplot(data <span class="op">=</span> college, x <span class="op">=</span> <span class="st">"Room.Board"</span>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">224</span>)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>sns.histplot(data <span class="op">=</span> college, x <span class="op">=</span> <span class="st">"Books"</span>)</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>plt.clf()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ISLP Ch2_files/figure-html/cell-11-output-1.png" width="593" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>&lt;Figure size 672x480 with 0 Axes&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="section-1" class="level4">
+<h4 class="anchored" data-anchor-id="section-1">9</h4>
+<p><strong>This exercise involves the <code>Auto</code> data set studied in the lab. Make sure that the missing values have been removed from the data.</strong></p>
+</section>
+<section id="a-1" class="level4">
+<h4 class="anchored" data-anchor-id="a-1">9 -(a)</h4>
+<p><strong>Which of the predictors are quantitative, and which are qualitatative?</strong></p>
+<div id="794fd00a" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>auto <span class="op">=</span> pd.read_csv(<span class="st">"C:/Users/USER/Documents/LS 빅데이터 스쿨/myportfolio/posts/ISLP/data/Auto.csv"</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>auto.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>beginning x:
- [1 2 3 4 5 6]
-reshaped x:
- [[1 2 3]
- [4 5 6]]</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>np.int64(6)</code></pre>
-</div>
-</div>
-<p>__</p>
-<div id="7dc40c58" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'x before we modify x_reshape :</span><span class="ch">\n</span><span class="st">'</span>, x)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'x_reshpae before we modify x_reshape:</span><span class="ch">\n</span><span class="st">'</span>, x_reshape)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>x_reshape[<span class="dv">0</span>, <span class="dv">0</span>] <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'x_reshape after we modify its top left element:</span><span class="ch">\n</span><span class="st">'</span>, x_reshape)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'x after we modify top left element of x_reshape:</span><span class="ch">\n</span><span class="st">'</span>, x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>x before we modify x_reshape :
- [1 2 3 4 5 6]
-x_reshpae before we modify x_reshape:
- [[1 2 3]
- [4 5 6]]
-x_reshape after we modify its top left element:
- [[5 2 3]
- [4 5 6]]
-x after we modify top left element of x_reshape:
- [5 2 3 4 5 6]</code></pre>
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 397 entries, 0 to 396
+Data columns (total 9 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   mpg           397 non-null    float64
+ 1   cylinders     397 non-null    int64  
+ 2   displacement  397 non-null    float64
+ 3   horsepower    397 non-null    object 
+ 4   weight        397 non-null    int64  
+ 5   acceleration  397 non-null    float64
+ 6   year          397 non-null    int64  
+ 7   origin        397 non-null    int64  
+ 8   name          397 non-null    object 
+dtypes: float64(3), int64(4), object(2)
+memory usage: 28.0+ KB</code></pre>
 </div>
 </div>
-<ol type="a">
-<li></li>
-</ol>
-<div id="fa41491d" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">#college = pd.read_csv("College.csv")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>The variables which dtype is object are <code>horsepower</code>, <code>name</code></li>
+</ul>
+<p><strong>There are missing values represented by a <code>?</code>.</strong> <strong>Change to numeric.</strong></p>
+<div id="164f2528" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>auto[<span class="st">'horsepower'</span>].unique()</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>auto <span class="op">=</span> auto[auto.horsepower <span class="op">!=</span> <span class="st">"?"</span>].copy()</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>auto[<span class="st">'horsepower'</span>] <span class="op">=</span> pd.to_numeric(auto[<span class="st">'horsepower'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="2" type="a">
-<li></li>
-</ol>
-<div id="42e28b43" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#college2 = pd.read_csv('College.csv', index_col = 0)</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co">#college3 = college.rename({'Unnamed: 0': 'College'},</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co">#                            axis = 1 )</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co">#college3 = college3.set_index('college')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="51befa90" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>quantitative <span class="op">=</span> auto.select_dtypes(include <span class="op">=</span>[<span class="st">'number'</span>]).columns</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>qualitative <span class="op">=</span> auto.select_dtypes(exclude <span class="op">=</span> [<span class="st">'number'</span>]).columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="b-1" class="level4">
+<h4 class="anchored" data-anchor-id="b-1">9 - (b)</h4>
+<p><strong>What is the range of each quantitative predictor? You can answer this using the <code>min()</code> and <code>max()</code> methods in <code>numpy</code>.</strong></p>
+<div id="291f6efd" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>auto_describe <span class="op">=</span> auto.describe()</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>auto_describe.loc[<span class="st">'range'</span>] <span class="op">=</span> auto_describe.loc[<span class="st">'max'</span>] <span class="op">-</span> auto_describe.loc[<span class="st">'min'</span>]</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>auto_describe.loc[<span class="st">'range'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="48">
+<pre><code>mpg               37.6
+cylinders          5.0
+displacement     387.0
+horsepower       184.0
+weight          3527.0
+acceleration      16.8
+year              12.0
+origin             2.0
+Name: range, dtype: float64</code></pre>
+</div>
+</div>
+</section>
+<section id="c-1" class="level4">
+<h4 class="anchored" data-anchor-id="c-1">9 - (c)</h4>
+<p><strong>What is the mean and standard deviation of each quantitative predictor?</strong></p>
+<div id="41a227d7" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># auto.describe()</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>auto_describe.loc[[<span class="st">'range'</span>, <span class="st">'mean'</span>, <span class="st">'std'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="49">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mpg</th>
+<th data-quarto-table-cell-role="th">cylinders</th>
+<th data-quarto-table-cell-role="th">displacement</th>
+<th data-quarto-table-cell-role="th">horsepower</th>
+<th data-quarto-table-cell-role="th">weight</th>
+<th data-quarto-table-cell-role="th">acceleration</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">origin</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">range</td>
+<td>37.600000</td>
+<td>5.000000</td>
+<td>387.000000</td>
+<td>184.000000</td>
+<td>3527.000000</td>
+<td>16.800000</td>
+<td>12.000000</td>
+<td>2.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">mean</td>
+<td>23.445918</td>
+<td>5.471939</td>
+<td>194.411990</td>
+<td>104.469388</td>
+<td>2977.584184</td>
+<td>15.541327</td>
+<td>75.979592</td>
+<td>1.576531</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">std</td>
+<td>7.805007</td>
+<td>1.705783</td>
+<td>104.644004</td>
+<td>38.491160</td>
+<td>849.402560</td>
+<td>2.758864</td>
+<td>3.683737</td>
+<td>0.805518</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="d-1" class="level4">
+<h4 class="anchored" data-anchor-id="d-1">9 - (d)</h4>
+<p><strong>Remove the 10th through 85th observations.</strong> <strong>What is the range, mean, and standard deviation of each predictor?</strong></p>
+<div id="952526b0" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>auto_drop <span class="op">=</span> auto.drop(auto.index[<span class="dv">10</span>:<span class="dv">85</span>])</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>auto_drop_describe <span class="op">=</span> auto.describe()</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>auto_drop_describe.loc[<span class="st">'range'</span>] <span class="op">=</span> auto_drop_describe.loc[<span class="st">'max'</span>] <span class="op">-</span> auto_drop_describe.loc[<span class="st">'min'</span>]</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>auto_drop_describe.loc[[<span class="st">"range"</span>, <span class="st">"mean"</span>, <span class="st">"std"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="50">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mpg</th>
+<th data-quarto-table-cell-role="th">cylinders</th>
+<th data-quarto-table-cell-role="th">displacement</th>
+<th data-quarto-table-cell-role="th">horsepower</th>
+<th data-quarto-table-cell-role="th">weight</th>
+<th data-quarto-table-cell-role="th">acceleration</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">origin</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">range</td>
+<td>37.600000</td>
+<td>5.000000</td>
+<td>387.000000</td>
+<td>184.000000</td>
+<td>3527.000000</td>
+<td>16.800000</td>
+<td>12.000000</td>
+<td>2.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">mean</td>
+<td>23.445918</td>
+<td>5.471939</td>
+<td>194.411990</td>
+<td>104.469388</td>
+<td>2977.584184</td>
+<td>15.541327</td>
+<td>75.979592</td>
+<td>1.576531</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">std</td>
+<td>7.805007</td>
+<td>1.705783</td>
+<td>104.644004</td>
+<td>38.491160</td>
+<td>849.402560</td>
+<td>2.758864</td>
+<td>3.683737</td>
+<td>0.805518</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="e-1" class="level4">
+<h4 class="anchored" data-anchor-id="e-1">9 - (e)</h4>
+<p><strong>Using the full data set, investicate the predictors graphically, using scatterplots or other tools of your choice. Create some plots highlighting the relationships among the predidctors. Comment on your findings.</strong></p>
+<div id="8bb0fe0a" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>sns.pairplot(auto, plot_kws<span class="op">=</span>{<span class="st">'s'</span>: <span class="dv">5</span>})</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>plt.subplots_adjust(left<span class="op">=</span><span class="fl">0.1</span>, right<span class="op">=</span><span class="fl">0.9</span>, top<span class="op">=</span><span class="fl">0.9</span>, bottom<span class="op">=</span><span class="fl">0.1</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>plt.clf()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ISLP Ch2_files/figure-html/cell-18-output-1.png" width="1617" height="1596" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>&lt;Figure size 672x480 with 0 Axes&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="f-1" class="level4">
+<h4 class="anchored" data-anchor-id="f-1">9 - (f)</h4>
+<p><strong>Suppose that we wish to predict <code>mpg</code> on the basis of the other variables. Do your plots suggest that any of the other variables might be useful in predicting <code>mpg</code>?</strong></p>
+<p>Based on the previous question, we could use weight, horsepower and displacement. These variables have a non-linear relationship with mpg.</p>
 
 
 </section>

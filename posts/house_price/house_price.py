@@ -19,7 +19,7 @@ sub_df.to_csv("posts/house_price/sample_submission.csv", index = False)
 
 
 ## YearBuilt기준으로 SalePrice 예측 
-house_train = house_train[["Id", "YearBuilt", "SalePrice"]]
+house_train = house_train[["Id", "YearBuilt", "To"]]
 
 # 연도별 평균 
 house_mean = house_train.groupby('YearBuilt', as_index = False)\
