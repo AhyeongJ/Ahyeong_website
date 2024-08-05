@@ -1,0 +1,49 @@
+---
+title: "Normal Distribution Practice"
+author: Ahyeong Jeong
+date: "2024-08-05"
+categories: [Statistics]
+---
+
+#### 필요한 패키지 불러오기 
+```{python}
+import numpy as np
+from scipy.stats import t
+```
+
+
+#### 문제 데이터 
+```{python}
+cars = np.array([15.078, 15.752, 15.549, 15.56, 16.098, 13.277, 15.462, 16.116, 15.214, 16.93, 14.118, 14.927,
+15.382, 16.709, 16.804])
+```
+
+#### 필요한 모수 구하기 
+```{python}
+n = len(cars)
+sample_mean = np.mean(cars)
+sample_std = np.std(cars, ddof= 1)
+```
+
+#### 2.
+null: mu >= 16.0
+alter: mu < 16.0
+
+#### 3.
+```{python}
+t_value = (sample_mean - 16) / (sample_std/np.sqrt(n))
+print('t_value :', t_value)
+```
+
+#### 4.
+```{python}
+p_value = (t.cdf(t_value, 14))
+print('p_value :', p_value)
+```
+
+#### 6. 
+```{python}
+sample_mean - t.ppf(0.975, df =  14) * (sample_std / np.sqrt(n)), sample_mean + t.ppf(0.975, df =  14) * (sample_std / np.sqrt(n))
+```
+
+

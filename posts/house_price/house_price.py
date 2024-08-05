@@ -40,3 +40,5 @@ house_test['SalePrice'] = house_test['SalePrice'].fillna(price_mean)
 #SalePrice 바꿔치기 및 저장 
 sub_df['SalePrice'] = house_test['SalePrice']
 sub_df.to_csv("posts/house_price/sample_submission2.csv", index = False)
+
+
