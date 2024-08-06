@@ -9,7 +9,7 @@
 <meta name="author" content="Ahyeong Jeong">
 <meta name="dcterms.date" content="2024-08-05">
 
-<title>Ahyeong website - Normal Distribution Practice</title>
+<title>Ahyeong website - Hypothesis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -147,7 +147,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Normal Distribution Practice</h1>
+      <h1 class="title">Hypothesis</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Statistics</div>
               </div>
@@ -190,21 +190,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="필요한-패키지-불러오기" class="level4">
 <h4 class="anchored" data-anchor-id="필요한-패키지-불러오기">필요한 패키지 불러오기</h4>
-<div id="3abcfbe3" class="cell" data-execution_count="1">
+<div id="bb438717" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> t</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="문제-데이터" class="level4">
 <h4 class="anchored" data-anchor-id="문제-데이터">문제 데이터</h4>
-<div id="25d359bb" class="cell" data-execution_count="2">
+<div id="a134ee68" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cars <span class="op">=</span> np.array([<span class="fl">15.078</span>, <span class="fl">15.752</span>, <span class="fl">15.549</span>, <span class="fl">15.56</span>, <span class="fl">16.098</span>, <span class="fl">13.277</span>, <span class="fl">15.462</span>, <span class="fl">16.116</span>, <span class="fl">15.214</span>, <span class="fl">16.93</span>, <span class="fl">14.118</span>, <span class="fl">14.927</span>,</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fl">15.382</span>, <span class="fl">16.709</span>, <span class="fl">16.804</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="필요한-모수-구하기" class="level4">
 <h4 class="anchored" data-anchor-id="필요한-모수-구하기">필요한 모수 구하기</h4>
-<div id="f2ed7cf0" class="cell" data-execution_count="3">
+<div id="9b1075ca" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">len</span>(cars)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sample_mean <span class="op">=</span> np.mean(cars)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>sample_std <span class="op">=</span> np.std(cars, ddof<span class="op">=</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -216,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="section-1" class="level4">
 <h4 class="anchored" data-anchor-id="section-1">3.</h4>
-<div id="e4dfab42" class="cell" data-execution_count="4">
+<div id="85809891" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>t_value <span class="op">=</span> (sample_mean <span class="op">-</span> <span class="dv">16</span>) <span class="op">/</span> (sample_std<span class="op">/</span>np.sqrt(n))</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'t_value :'</span>, t_value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -226,7 +226,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="section-2" class="level4">
 <h4 class="anchored" data-anchor-id="section-2">4.</h4>
-<div id="1a0e0767" class="cell" data-execution_count="5">
+<div id="9e892dda" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>p_value <span class="op">=</span> (t.cdf(t_value, <span class="dv">14</span>))</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'p_value :'</span>, p_value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -236,9 +236,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="section-3" class="level4">
 <h4 class="anchored" data-anchor-id="section-3">6.</h4>
-<div id="171257fe" class="cell" data-execution_count="6">
+<div id="cd4b0d90" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sample_mean <span class="op">-</span> t.ppf(<span class="fl">0.975</span>, df <span class="op">=</span>  <span class="dv">14</span>) <span class="op">*</span> (sample_std <span class="op">/</span> np.sqrt(n)), sample_mean <span class="op">+</span> t.ppf(<span class="fl">0.975</span>, df <span class="op">=</span>  <span class="dv">14</span>) <span class="op">*</span> (sample_std <span class="op">/</span> np.sqrt(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>(14.988864240339733, 16.074602426326933)</code></pre>
 </div>
 </div>
